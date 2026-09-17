@@ -28,3 +28,19 @@ liquid-glass-focus-mode-buttons/
 ├── style.css
 ├── script.js
 └── README.md
+```
+## Usage
+
+Open `index.html` in your browser to preview the component.
+
+Click any focus mode button to activate its selected state. You can customize the button labels, colors, layout and visual effects directly in the HTML and CSS files.
+
+## Live Tutorial
+
+For the full tutorial, live preview and implementation guide, visit:
+
+[Liquid Glass Focus Mode Buttons – CodeRipple](https://getcoderipple.com/)
+
+## License
+
+This component is available under the MIT License.
