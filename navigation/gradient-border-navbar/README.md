@@ -1,12 +1,20 @@
 # Gradient Border Navbar
 
-A CodeRipple navigation component extracted from the published WordPress component.
+A reusable navigation component built with HTML and CSS. Use it as a clean starting point for modern websites and frontend projects.
+
+## Live Demo & Full Tutorial
+
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
+
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/gradient-border-navbar/)**
 
 ## Files
 
 - `index.html` — component markup and standalone preview
 - `style.css` — component styling
 
-This component does not require JavaScript.
+## About This Component
 
-Live component: https://getcoderipple.com/gradient-border-navbar/
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
+
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**
