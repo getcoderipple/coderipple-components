@@ -1,0 +1,85 @@
+.glass-card{
+  width:100%;
+  max-width:360px;
+  padding:30px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+  border-radius:20px;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+  color:#ffffff;
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.30),
+    inset 0 1px 0 rgba(255,255,255,.08);
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.glass-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(34,211,238,.45);
+  box-shadow:
+    0 26px 55px rgba(0,0,0,.35),
+    0 0 30px rgba(139,92,246,.15);
+}
+
+.glass-card-icon{
+  width:52px;
+  height:52px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:20px;
+  border-radius:14px;
+  background:linear-gradient(
+    135deg,
+    rgba(34,211,238,.25),
+    rgba(139,92,246,.30)
+  );
+  color:#ffffff;
+  font-size:22px;
+}
+
+.glass-card h2{
+  margin:0 0 12px;
+  color:#ffffff;
+  font-size:24px;
+}
+
+.glass-card p{
+  margin:0 0 22px;
+  color:#b5c3d6;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.glass-card-meta{
+  display:flex;
+  gap:16px;
+  margin-bottom:22px;
+  color:#8fa4bd;
+  font-size:12px;
+}
+
+.glass-card-link{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:#22d3ee;
+  font-size:14px;
+  font-weight:700;
+  text-decoration:none;
+}
+
+.glass-card-link span{
+  transition:transform .25s ease;
+}
+
+.glass-card:hover .glass-card-link span{
+  transform:translateX(5px);
+}
+
+html,body{min-height:100%;}
+body{margin:0;background:#050914;}
