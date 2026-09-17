@@ -1,0 +1,48 @@
+.split-text{
+  position:relative;
+  display:inline-block;
+  font-size:64px;
+  font-weight:800;
+  line-height:1.1;
+  cursor:pointer;
+}
+
+.split-text span{
+  display:block;
+  transition:transform .4s ease;
+}
+
+.split-top,
+.split-bottom{
+  position:absolute;
+  top:0;
+  left:0;
+  color:#ffffff;
+  z-index:2;
+}
+
+.split-top{
+  clip-path:inset(0 0 50% 0);
+}
+
+.split-bottom{
+  clip-path:inset(50% 0 0 0);
+}
+
+.split-center{
+  position:relative;
+  color:#22d3ee;
+  z-index:1;
+}
+
+.split-text:hover .split-top{
+  transform:translateY(-8px);
+}
+
+.split-text:hover .split-bottom{
+  transform:translateY(8px);
+}
+
+/* Standalone preview fallback */
+html, body { min-height: 100%; }
+body { margin: 0; background: #050914; }

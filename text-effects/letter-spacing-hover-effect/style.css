@@ -1,0 +1,27 @@
+.letter-spacing-text{
+  margin:0;
+  color:#ffffff;
+  font-size:64px;
+  font-weight:800;
+  line-height:1.1;
+  letter-spacing:0;
+  cursor:pointer;
+
+  transition:
+    letter-spacing .4s ease,
+    color .4s ease,
+    text-shadow .4s ease;
+}
+
+.letter-spacing-text:hover{
+  letter-spacing:10px;
+  color:#22d3ee;
+
+  text-shadow:
+    0 0 10px rgba(34,211,238,.35),
+    0 0 24px rgba(34,211,238,.18);
+}
+
+/* Standalone preview fallback */
+html, body { min-height: 100%; }
+body { margin: 0; background: #050914; }

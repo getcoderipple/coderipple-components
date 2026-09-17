@@ -1,0 +1,40 @@
+.shimmer-text{
+  margin:0;
+  font-size:64px;
+  font-weight:800;
+  line-height:1.1;
+
+  background:linear-gradient(
+    110deg,
+    #64748b 20%,
+    #ffffff 40%,
+    #22d3ee 50%,
+    #ffffff 60%,
+    #64748b 80%
+  );
+
+  background-size:250% 100%;
+  background-position:150% 0;
+
+  background-clip:text;
+  -webkit-background-clip:text;
+
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+
+  animation:shimmerMove 2.5s linear infinite;
+}
+
+@keyframes shimmerMove{
+  0%{
+    background-position:150% 0;
+  }
+
+  100%{
+    background-position:-150% 0;
+  }
+}
+
+/* Standalone preview fallback */
+html, body { min-height: 100%; }
+body { margin: 0; background: #050914; }

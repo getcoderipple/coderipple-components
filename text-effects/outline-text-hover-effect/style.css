@@ -1,0 +1,33 @@
+.outline-hover-text{
+  margin:0;
+  font-size:64px;
+  font-weight:800;
+  line-height:1.1;
+  cursor:pointer;
+
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+  -webkit-text-stroke:2px #22d3ee;
+
+  transition:
+    -webkit-text-fill-color .35s ease,
+    color .35s ease,
+    text-shadow .35s ease,
+    transform .35s ease;
+}
+
+.outline-hover-text:hover{
+  color:#22d3ee;
+  -webkit-text-fill-color:#22d3ee;
+  -webkit-text-stroke:2px #22d3ee;
+
+  text-shadow:
+    0 0 12px rgba(34,211,238,.35),
+    0 0 28px rgba(34,211,238,.20);
+
+  transform:translateY(-2px);
+}
+
+/* Standalone preview fallback */
+html, body { min-height: 100%; }
+body { margin: 0; background: #050914; }

@@ -1,0 +1,43 @@
+.blur-reveal-text{
+  margin:0;
+  color:#ffffff;
+  font-size:64px;
+  font-weight:800;
+  line-height:1.1;
+
+  opacity:0;
+  filter:blur(14px);
+  transform:translateY(12px) scale(.96);
+
+  animation:blurReveal 3s ease-in-out infinite;
+}
+
+@keyframes blurReveal{
+  0%{
+    opacity:0;
+    filter:blur(14px);
+    transform:translateY(12px) scale(.96);
+  }
+
+  35%{
+    opacity:1;
+    filter:blur(0);
+    transform:translateY(0) scale(1);
+  }
+
+  75%{
+    opacity:1;
+    filter:blur(0);
+    transform:translateY(0) scale(1);
+  }
+
+  100%{
+    opacity:0;
+    filter:blur(10px);
+    transform:translateY(-8px) scale(.98);
+  }
+}
+
+/* Standalone preview fallback */
+html, body { min-height: 100%; }
+body { margin: 0; background: #050914; }
