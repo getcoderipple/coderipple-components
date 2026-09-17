@@ -1,6 +1,12 @@
 # Custom Circle Cursor
 
-A CodeRipple cursor effect extracted from the published WordPress component.
+A lightweight custom circle cursor effect built with HTML, CSS and JavaScript. Use it to add a smooth, modern custom cursor interaction to websites and frontend projects.
+
+## Live Demo & Full Tutorial
+
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
+
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/custom-circle-cursor/)**
 
 ## Files
 
@@ -8,4 +14,8 @@ A CodeRipple cursor effect extracted from the published WordPress component.
 - `style.css` — component styling
 - `script.js` — component interaction
 
-Live component: https://getcoderipple.com/custom-circle-cursor/
+## About This Component
+
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
+
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**
