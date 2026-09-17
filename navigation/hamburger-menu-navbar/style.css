@@ -1,0 +1,127 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.hamburger-navbar{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  padding:14px 18px;
+  background:#0b1423;
+  border:1px solid #1c2a40;
+  border-radius:14px;
+}
+
+.hamburger-brand{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#ffffff;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.hamburger-brand span{
+  color:#22d3ee;
+}
+
+.hamburger-links{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.hamburger-links a{
+  color:#aab4c8;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.hamburger-links a:hover{
+  color:#22d3ee;
+}
+
+.hamburger-toggle{
+  display:none;
+  width:42px;
+  height:38px;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+  border:1px solid #263750;
+  border-radius:9px;
+  background:#101a2a;
+  cursor:pointer;
+}
+
+.hamburger-toggle span{
+  width:19px;
+  height:2px;
+  background:#ffffff;
+  border-radius:10px;
+  transition:.25s ease;
+}
+
+@media(max-width:700px){
+
+  .hamburger-toggle{
+    display:flex;
+  }
+
+  .hamburger-links{
+    position:absolute;
+    top:calc(100% + 8px);
+    left:0;
+    right:0;
+
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    gap:4px;
+
+    padding:10px;
+
+    background:#0b1423;
+    border:1px solid #1c2a40;
+    border-radius:12px;
+  }
+
+  .hamburger-links.open{
+    display:flex;
+  }
+
+  .hamburger-links a{
+    padding:10px 12px;
+    border-radius:8px;
+  }
+
+  .hamburger-links a:hover{
+    background:rgba(34,211,238,.08);
+  }
+
+}

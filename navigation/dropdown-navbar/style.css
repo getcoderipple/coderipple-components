@@ -1,0 +1,129 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.dropdown-navbar{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+
+  width:100%;
+  padding:14px 18px;
+
+  background:#0b1423;
+  border:1px solid #1c2a40;
+  border-radius:14px;
+}
+
+.dropdown-brand{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#ffffff;
+  font-weight:800;
+  text-decoration:none;
+}
+
+.dropdown-brand span{
+  color:#22d3ee;
+}
+
+.dropdown-nav-links{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.dropdown-nav-links > a,
+.dropdown-toggle{
+  color:#aab4c8;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.dropdown-toggle{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  padding:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+}
+
+.dropdown-nav-links > a:hover,
+.dropdown-toggle:hover{
+  color:#22d3ee;
+}
+
+.dropdown-item{
+  position:relative;
+}
+
+.dropdown-menu{
+  position:absolute;
+  top:calc(100% + 12px);
+  left:0;
+  z-index:20;
+
+  display:none;
+  min-width:180px;
+  padding:8px;
+
+  background:#0b1423;
+  border:1px solid #1c2a40;
+  border-radius:12px;
+  box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+
+.dropdown-menu.open{
+  display:block;
+}
+
+.dropdown-menu a{
+  display:block;
+  padding:10px 12px;
+  border-radius:8px;
+
+  color:#aab4c8;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.dropdown-menu a:hover{
+  color:#ffffff;
+  background:rgba(34,211,238,.08);
+}
+
+.dropdown-arrow{
+  transition:transform .25s ease;
+}
+
+.dropdown-toggle.active .dropdown-arrow{
+  transform:rotate(180deg);
+}
