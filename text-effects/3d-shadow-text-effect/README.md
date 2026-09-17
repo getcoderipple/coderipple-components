@@ -1,22 +1,20 @@
 # 3D Shadow Text Effect
 
-Create a 3D Shadow Text Effect using HTML and CSS. Layered cyan, blue, and purple shadows create bold depth, while a smooth hover animation makes the text more interactive.
+A reusable text effect built with HTML and CSS. Use it as a clean starting point for modern websites and frontend projects.
+
+## Live Demo & Full Tutorial
+
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
+
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/3d-shadow-text-effect/)**
 
 ## Files
 
-- `index.html` — standalone HTML demo
-- `style.css` — component styles
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
 
-## Usage
+## About This Component
 
-Open `index.html` in a browser, or copy the HTML and CSS into your own project.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-## Live Tutorial
-
-https://getcoderipple.com/3d-shadow-text-effect/
-
-## License
-
-MIT
-
-Created by [CodeRipple](https://getcoderipple.com)
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**

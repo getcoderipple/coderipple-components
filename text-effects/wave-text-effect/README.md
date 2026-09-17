@@ -1,22 +1,20 @@
 # Wave Text Effect
 
-Create a Wave Text Effect using HTML and CSS. Each letter moves upward with staggered timing and changes to cyan, creating a smooth continuous wave animation.
+A reusable text effect built with HTML and CSS. Use it as a clean starting point for modern websites and frontend projects.
+
+## Live Demo & Full Tutorial
+
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
+
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/wave-text-effect/)**
 
 ## Files
 
-- `index.html` — standalone HTML demo
-- `style.css` — component styles
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
 
-## Usage
+## About This Component
 
-Open `index.html` in a browser, or copy the HTML and CSS into your own project.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-## Live Tutorial
-
-https://getcoderipple.com/wave-text-effect/
-
-## License
-
-MIT
-
-Created by [CodeRipple](https://getcoderipple.com)
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**
