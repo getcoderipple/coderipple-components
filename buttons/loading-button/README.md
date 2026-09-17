@@ -1,50 +1,21 @@
 # Loading Button
 
-An interactive loading button that displays a spinner and loading state after being clicked, then automatically changes to a completed state.
+A reusable button component built with HTML, CSS and JavaScript. Use it as a clean starting point for modern websites and frontend projects.
 
-This component is part of the [CodeRipple](https://getcoderipple.com) component library.
+## Live Demo & Full Tutorial
 
-## Features
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
 
-- Interactive loading state
-- Animated CSS spinner
-- Automatic loading text update
-- Completed success state
-- Smooth hover effects
-- Clean HTML, CSS and JavaScript structure
-- No external libraries required
-- Easy to customize and reuse
-
-## Built With
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/loading-button/)**
 
 ## Files
 
-```text
-loading-button/
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-```
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
+- `script.js` — component interaction
 
-## Usage
+## About This Component
 
-Open `index.html` in your browser to preview the component.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-Click the Submit button to activate the loading state. After two seconds, the button automatically changes to the completed state.
-
-You can customize the button text, colors, loading duration and visual effects directly in the HTML, CSS and JavaScript files.
-
-## Live Tutorial
-
-For the full tutorial, live preview and implementation guide, visit:
-
-[Loading Button – CodeRipple](https://getcoderipple.com/)
-
-## License
-
-This component is available under the MIT License.
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**

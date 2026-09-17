@@ -1,46 +1,20 @@
 # Social CTA Gradient Button
 
-A modern call-to-action button featuring a vibrant gradient background, smooth hover animation, moving shine effect and animated arrow.
+A reusable button component built with HTML and CSS. Use it as a clean starting point for modern websites and frontend projects.
 
-This component is part of the [CodeRipple](https://getcoderipple.com) component library.
+## Live Demo & Full Tutorial
 
-## Features
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
 
-- Vibrant multi-color gradient design
-- Smooth hover lift effect
-- Animated shine effect
-- Sliding arrow interaction
-- Clean HTML and CSS structure
-- Easy to customize and reuse
-- No JavaScript required
-- No external libraries required
-
-## Built With
-
-- HTML5
-- CSS3
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/social-cta-gradient-button/)**
 
 ## Files
 
-```text
-social-cta-gradient-button/
-├── index.html
-├── style.css
-└── README.md
-```
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
 
-## Usage
+## About This Component
 
-Open `index.html` in your browser to preview the component.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-You can customize the button text, gradient colors, spacing, border radius and hover effects directly in the HTML and CSS files.
-
-## Live Tutorial
-
-For the full tutorial, live preview and implementation guide, visit:
-
-[Social CTA Gradient Button – CodeRipple](https://getcoderipple.com/)
-
-## License
-
-This component is available under the MIT License.
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**

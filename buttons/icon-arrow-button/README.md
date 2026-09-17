@@ -1,43 +1,20 @@
 # Icon Arrow Button
 
-An animated icon arrow button that lifts slightly while the arrow moves to the right on hover. Built with HTML and CSS for call-to-action buttons.
+A reusable button component built with HTML and CSS. Use it as a clean starting point for modern websites and frontend projects.
 
-This component is part of the [CodeRipple](https://getcoderipple.com) component library.
+## Live Demo & Full Tutorial
 
-## Features
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
 
-- Clean reusable component structure
-- Standalone browser preview
-- Easy to customize and reuse
-- No JavaScript required
-- No external libraries required
-
-## Built With
-
-- HTML5
-- CSS3
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/icon-arrow-button/)**
 
 ## Files
 
-```text
-icon-arrow-button/
-├── index.html
-├── style.css
-└── README.md
-```
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
 
-## Usage
+## About This Component
 
-Open `index.html` in your browser to preview the component.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-Customize the component directly in the HTML and CSS files.
-
-## Live Tutorial
-
-For the full tutorial, live preview and implementation guide, visit:
-
-[Icon Arrow Button – CodeRipple](https://getcoderipple.com/icon-arrow-button/)
-
-## License
-
-This component is available under the MIT License.
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**

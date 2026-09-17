@@ -1,43 +1,20 @@
 # Neon Glow Button
 
-Create a Neon Glow Button using HTML and CSS. The bright cyan border, layered glow, and smooth hover effect create an eye-catching interaction without requiring JavaScript.
+A reusable button component built with HTML and CSS. Use it as a clean starting point for modern websites and frontend projects.
 
-This component is part of the [CodeRipple](https://getcoderipple.com) component library.
+## Live Demo & Full Tutorial
 
-## Features
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
 
-- Clean reusable component structure
-- Standalone browser preview
-- Easy to customize and reuse
-- No JavaScript required
-- No external libraries required
-
-## Built With
-
-- HTML5
-- CSS3
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/neon-glow-button/)**
 
 ## Files
 
-```text
-neon-glow-button/
-├── index.html
-├── style.css
-└── README.md
-```
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
 
-## Usage
+## About This Component
 
-Open `index.html` in your browser to preview the component.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-Customize the component directly in the HTML and CSS files.
-
-## Live Tutorial
-
-For the full tutorial, live preview and implementation guide, visit:
-
-[Neon Glow Button – CodeRipple](https://getcoderipple.com/neon-glow-button/)
-
-## License
-
-This component is available under the MIT License.
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**

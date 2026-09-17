@@ -1,45 +1,21 @@
 # Liquid Glass Focus Mode Buttons
 
-Create Liquid Glass Focus Mode Buttons with layered gradients, colored glow effects, hover transforms, responsive styling, and JavaScript that keeps one focus mode visually selected at a time.
+A reusable button component built with HTML, CSS and JavaScript. Use it as a clean starting point for modern websites and frontend projects.
 
-This component is part of the [CodeRipple](https://getcoderipple.com) component library.
+## Live Demo & Full Tutorial
 
-## Features
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
 
-- Clean reusable component structure
-- Standalone browser preview
-- Easy to customize and reuse
-- Interactive JavaScript behavior
-- No external libraries required
-
-## Built With
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/liquid-glass-focus-mode-buttons/)**
 
 ## Files
 
-```text
-liquid-glass-focus-mode-buttons/
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-```
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
+- `script.js` — component interaction
 
-## Usage
+## About This Component
 
-Open `index.html` in your browser to preview the component.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-Customize the component directly in the HTML, CSS and JavaScript files.
-
-## Live Tutorial
-
-For the full tutorial, live preview and implementation guide, visit:
-
-[Liquid Glass Focus Mode Buttons – CodeRipple](https://getcoderipple.com/liquid-glass-focus-mode-buttons/)
-
-## License
-
-This component is available under the MIT License.
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**
