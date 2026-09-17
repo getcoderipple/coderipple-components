@@ -1,0 +1,119 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.moving-stripes-bg{
+  position:relative;
+  min-height:320px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  background-color:#050914;
+
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(34,211,238,.10) 0,
+      rgba(34,211,238,.10) 18px,
+      transparent 18px,
+      transparent 38px
+    );
+
+  background-size:56px 56px;
+
+  animation:stripesMove 4s linear infinite;
+}
+
+.moving-stripes-bg::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(139,92,246,.16),
+      transparent 58%
+    );
+
+  pointer-events:none;
+}
+
+.stripes-content{
+  position:relative;
+  z-index:2;
+
+  max-width:600px;
+  padding:30px;
+
+  text-align:center;
+}
+
+.stripes-content span{
+  display:inline-block;
+  margin-bottom:12px;
+
+  color:#22d3ee;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.stripes-content h2{
+  margin:0 0 12px;
+
+  color:#ffffff;
+  font-size:32px;
+  line-height:1.2;
+}
+
+.stripes-content p{
+  margin:0;
+
+  color:#c7d2e5;
+  font-size:15px;
+}
+
+@keyframes stripesMove{
+
+  from{
+    background-position:0 0;
+  }
+
+  to{
+    background-position:56px 56px;
+  }
+
+}

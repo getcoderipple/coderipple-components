@@ -1,0 +1,148 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.gradient-wave-bg{
+  position:relative;
+  min-height:320px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:#050914;
+}
+
+.wave{
+  position:absolute;
+
+  width:150%;
+  height:220px;
+
+  left:-25%;
+
+  border-radius:50%;
+
+  opacity:.55;
+
+  filter:blur(10px);
+
+  animation:waveMove 8s ease-in-out infinite alternate;
+}
+
+.wave-one{
+  bottom:-110px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #22d3ee,
+      #2563eb
+    );
+}
+
+.wave-two{
+  bottom:-145px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #8b5cf6,
+      #d946ef
+    );
+
+  animation-delay:-3s;
+}
+
+.wave-three{
+  bottom:-175px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #0ea5e9,
+      #7c3aed
+    );
+
+  animation-delay:-5s;
+}
+
+.gradient-wave-content{
+  position:relative;
+  z-index:2;
+
+  max-width:600px;
+  padding:30px;
+
+  text-align:center;
+}
+
+.gradient-wave-content span{
+  display:inline-block;
+  margin-bottom:12px;
+
+  color:#22d3ee;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.gradient-wave-content h2{
+  margin:0 0 12px;
+
+  color:#ffffff;
+  font-size:32px;
+  line-height:1.2;
+}
+
+.gradient-wave-content p{
+  margin:0;
+
+  color:#c7d2e5;
+  font-size:15px;
+}
+
+@keyframes waveMove{
+
+  0%{
+    transform:translateX(-30px) rotate(-3deg);
+  }
+
+  50%{
+    transform:translateX(20px) rotate(2deg);
+  }
+
+  100%{
+    transform:translateX(40px) rotate(-1deg);
+  }
+
+}

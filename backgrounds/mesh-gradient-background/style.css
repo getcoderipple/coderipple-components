@@ -1,0 +1,133 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.mesh-gradient-bg{
+  position:relative;
+  min-height:320px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(34,211,238,.55),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(139,92,246,.55),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 25% 85%,
+      rgba(59,130,246,.45),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(217,70,239,.45),
+      transparent 35%
+    ),
+    #050914;
+}
+
+.mesh-gradient-bg::before{
+  content:"";
+
+  position:absolute;
+  inset:-20%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,.05),
+      transparent 45%
+    );
+
+  animation:meshShift 8s ease-in-out infinite alternate;
+
+  pointer-events:none;
+}
+
+.mesh-content{
+  position:relative;
+  z-index:2;
+
+  max-width:600px;
+  padding:30px;
+
+  text-align:center;
+}
+
+.mesh-content span{
+  display:inline-block;
+  margin-bottom:12px;
+
+  color:#67e8f9;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.mesh-content h2{
+  margin:0 0 12px;
+
+  color:#ffffff;
+  font-size:32px;
+  line-height:1.2;
+}
+
+.mesh-content p{
+  margin:0;
+
+  color:#c7d2e5;
+  font-size:15px;
+}
+
+@keyframes meshShift{
+
+  0%{
+    transform:translate(-20px,-10px) scale(1);
+  }
+
+  50%{
+    transform:translate(25px,20px) scale(1.08);
+  }
+
+  100%{
+    transform:translate(-10px,30px) scale(.96);
+  }
+
+}

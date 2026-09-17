@@ -1,0 +1,123 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.aurora-bg{
+  position:relative;
+  min-height:320px;
+  overflow:hidden;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#050914;
+}
+
+.aurora-glow{
+  position:absolute;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+
+  filter:blur(70px);
+  opacity:.55;
+
+  animation:auroraFloat 8s ease-in-out infinite alternate;
+}
+
+.aurora-one{
+  top:-170px;
+  left:-90px;
+  background:#22d3ee;
+}
+
+.aurora-two{
+  top:-100px;
+  right:-120px;
+  background:#8b5cf6;
+  animation-delay:-3s;
+}
+
+.aurora-three{
+  bottom:-220px;
+  left:30%;
+  background:#d946ef;
+  animation-delay:-5s;
+}
+
+.aurora-content{
+  position:relative;
+  z-index:2;
+  max-width:600px;
+  padding:30px;
+  text-align:center;
+}
+
+.aurora-content span{
+  display:inline-block;
+  margin-bottom:12px;
+
+  color:#67e8f9;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+}
+
+.aurora-content h2{
+  margin:0 0 12px;
+
+  color:#ffffff;
+  font-size:32px;
+  line-height:1.2;
+}
+
+.aurora-content p{
+  margin:0;
+
+  color:#c7d2e5;
+  font-size:15px;
+}
+
+@keyframes auroraFloat{
+
+  0%{
+    transform:translate3d(-20px,-10px,0) scale(1);
+  }
+
+  50%{
+    transform:translate3d(30px,20px,0) scale(1.08);
+  }
+
+  100%{
+    transform:translate3d(-10px,35px,0) scale(.96);
+  }
+
+}
