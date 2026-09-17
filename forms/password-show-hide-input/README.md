@@ -1,6 +1,12 @@
 # Password Show Hide Input
 
-A CodeRipple form component extracted from the published WordPress component.
+A reusable form component built with HTML, CSS and JavaScript. Use it as a clean starting point for modern websites and frontend projects.
+
+## Live Demo & Full Tutorial
+
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
+
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/password-show-hide-input/)**
 
 ## Files
 
@@ -8,4 +14,8 @@ A CodeRipple form component extracted from the published WordPress component.
 - `style.css` — component styling
 - `script.js` — component interaction
 
-Live component: https://getcoderipple.com/password-show-hide-input/
+## About This Component
+
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
+
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**
