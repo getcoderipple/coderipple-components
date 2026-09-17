@@ -1,13 +1,21 @@
 # Neon Energy Progress Loader
 
-A futuristic animated progress loader with neon energy effects, live percentage tracking, glowing motion and a completed state.
+A reusable loader animation built with HTML, CSS and JavaScript. Use it as a clean starting point for modern websites and frontend projects.
+
+## Live Demo & Full Tutorial
+
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
+
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/neon-energy-progress-loader/)**
 
 ## Files
 
-- `index.html` - Component markup and demo page.
-- `style.css` - Loader styling and animation.
-- `script.js` - JavaScript functionality for the loader.
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
+- `script.js` — component interaction
 
-## Live Component
+## About This Component
 
-https://getcoderipple.com/neon-energy-progress-loader/
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
+
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**

@@ -1,12 +1,20 @@
 # Gradient Spinner Loader
 
-A colorful circular spinner with a smooth cyan-to-purple gradient. It uses pure HTML and CSS with no JavaScript required.
+A reusable loader animation built with HTML and CSS. Use it as a clean starting point for modern websites and frontend projects.
+
+## Live Demo & Full Tutorial
+
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
+
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/gradient-spinner-loader/)**
 
 ## Files
 
-- `index.html` - Component markup and demo page.
-- `style.css` - Loader styling and animation.
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
 
-## Live Component
+## About This Component
 
-https://getcoderipple.com/gradient-spinner-loader/
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
+
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**
