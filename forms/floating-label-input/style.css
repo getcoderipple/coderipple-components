@@ -1,0 +1,80 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.floating-field{
+  position:relative;
+  width:100%;
+  max-width:420px;
+}
+
+.floating-field input{
+  width:100%;
+  padding:15px 16px;
+
+  border:1px solid #263750;
+  border-radius:10px;
+  outline:none;
+
+  background:#0b1423;
+  color:#ffffff;
+
+  font-size:16px;
+
+  transition:.25s ease;
+}
+
+.floating-field label{
+  position:absolute;
+  left:16px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  color:#8491a7;
+  font-size:15px;
+
+  pointer-events:none;
+
+  transition:.25s ease;
+}
+
+.floating-field input:focus{
+  border-color:#22d3ee;
+
+  box-shadow:
+    0 0 0 3px rgba(34,211,238,.10);
+}
+
+.floating-field input:focus + label,
+.floating-field input:not(:placeholder-shown) + label{
+  opacity:0;
+  visibility:hidden;
+}
+}

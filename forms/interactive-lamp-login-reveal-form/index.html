@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Lamp Login Reveal Form | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="demo-stage">
+<div class="cr-lamp-stage">
+
+  <div class="cr-lamp-scene" id="lampScene">
+
+    <div class="cr-lamp-side">
+
+      <div class="cr-lamp">
+
+        <div class="cr-lamp-shade"></div>
+
+        <div class="cr-lamp-light"></div>
+
+        <div class="cr-lamp-stem"></div>
+
+        <div class="cr-lamp-base"></div>
+
+        <button
+          class="cr-lamp-switch"
+          id="lampSwitch"
+          type="button"
+          aria-label="Toggle login lamp"
+        >
+          <span class="cr-switch-line"></span>
+          <span class="cr-switch-dot"></span>
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="cr-login-panel" id="loginPanel">
+
+      <span class="cr-login-kicker">
+        WELCOME BACK
+      </span>
+
+      <h2>Login</h2>
+
+      <p>
+        Enter your details to continue.
+      </p>
+
+      <label>Email</label>
+
+      <input
+        type="email"
+        placeholder="you@example.com"
+      >
+
+      <label>Password</label>
+
+      <input
+        type="password"
+        placeholder="••••••••"
+      >
+
+      <button
+        class="cr-login-btn"
+        type="button"
+      >
+        Sign In
+        <span>→</span>
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload Input | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="demo-stage">
+<div class="file-upload">
+
+  <input
+    type="file"
+    id="file-upload-input"
+    data-file-input
+  >
+
+  <label
+    for="file-upload-input"
+    class="file-upload-button"
+  >
+
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 16V4"></path>
+      <path d="M7 9l5-5 5 5"></path>
+      <path d="M5 20h14"></path>
+    </svg>
+
+    <span>Choose File</span>
+
+  </label>
+
+  <span
+    class="file-upload-name"
+    data-file-name
+  >
+    No file selected
+  </span>
+
+</div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

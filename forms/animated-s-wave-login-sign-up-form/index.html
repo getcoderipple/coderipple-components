@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated S-Wave Login &amp; Sign Up Form | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="demo-stage">
+<div class="cr-auth-switcher">
+
+  <div class="cr-auth-shell">
+
+    <div class="cr-auth-form cr-login-form">
+
+      <div class="cr-form-inner">
+
+        <h2>Login</h2>
+        <div class="cr-mini-line"></div>
+
+        <label>Username</label>
+        <input type="text" placeholder="Enter username">
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter password">
+
+        <div class="cr-form-options">
+
+          <label class="cr-check">
+            <input type="checkbox">
+            <span>Remember me</span>
+          </label>
+
+          <button class="cr-text-btn">
+            Forgot?
+          </button>
+
+        </div>
+
+        <button class="cr-auth-submit">
+          Login
+        </button>
+
+        <p>
+          Don’t have an account?
+          <button class="cr-switch-btn" data-target="signup">
+            Sign Up
+          </button>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="cr-auth-form cr-signup-form">
+
+      <div class="cr-form-inner">
+
+        <h2>Sign Up</h2>
+        <div class="cr-mini-line"></div>
+
+        <label>Username</label>
+        <input type="text" placeholder="Choose username">
+
+        <label>Email</label>
+        <input type="email" placeholder="Enter email">
+
+        <label>Password</label>
+        <input type="password" placeholder="Create password">
+
+        <button class="cr-auth-submit">
+          Sign Up
+        </button>
+
+        <p>
+          Already have an account?
+          <button class="cr-switch-btn" data-target="login">
+            Login
+          </button>
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="cr-wave-stage">
+
+      <svg
+        class="cr-wave-svg"
+        viewBox="0 0 460 470"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+
+        <defs>
+
+          <linearGradient id="crWaveBg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#111a30"/>
+            <stop offset="55%" stop-color="#07101e"/>
+            <stop offset="100%" stop-color="#02050c"/>
+          </linearGradient>
+
+          <linearGradient id="crWaveEdge" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#22d3ee"/>
+            <stop offset="45%" stop-color="#6366f1"/>
+            <stop offset="100%" stop-color="#8b5cf6"/>
+          </linearGradient>
+
+          <filter id="crWaveGlow" x="-60%" y="-30%" width="220%" height="160%">
+            <feGaussianBlur stdDeviation="7" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+
+        </defs>
+
+        <path
+          class="cr-wave-shape"
+          d="
+            M 150 0
+            C 200 45, 210 90, 168 126
+            C 120 168, 115 210, 158 247
+            C 205 287, 205 335, 158 375
+            C 125 403, 125 438, 155 470
+            L 460 470
+            L 460 0
+            Z
+          "
+          fill="url(#crWaveBg)"
+        />
+
+        <path
+          class="cr-wave-edge"
+          d="
+            M 150 0
+            C 200 45, 210 90, 168 126
+            C 120 168, 115 210, 158 247
+            C 205 287, 205 335, 158 375
+            C 125 403, 125 438, 155 470
+          "
+          fill="none"
+          stroke="url(#crWaveEdge)"
+          stroke-width="5"
+          filter="url(#crWaveGlow)"
+        />
+
+      </svg>
+
+
+      <div class="cr-panel-content cr-panel-login">
+
+        <h2>
+          WELCOME<br>
+          BACK!
+        </h2>
+
+        <p>
+          Good to see you again.
+          Login to continue your journey.
+        </p>
+
+      </div>
+
+
+      <div class="cr-panel-content cr-panel-signup">
+
+        <h2>
+          HELLO<br>
+          THERE!
+        </h2>
+
+        <p>
+          Create your account and start
+          something amazing.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

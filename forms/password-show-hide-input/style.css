@@ -1,0 +1,102 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.password-field{
+  width:100%;
+  max-width:420px;
+}
+
+.password-field label{
+  display:block;
+  margin-bottom:9px;
+
+  color:#aab4c8;
+  font-size:13px;
+  font-weight:600;
+}
+
+.password-input-wrap{
+  position:relative;
+}
+
+.password-input-wrap input{
+  width:100%;
+  padding:15px 82px 15px 16px;
+
+  border:1px solid #263750;
+  border-radius:10px;
+  outline:none;
+
+  background:#0b1423;
+  color:#ffffff;
+
+  font-size:16px;
+
+  transition:.25s ease;
+}
+
+.password-input-wrap input::placeholder{
+  color:#65748b;
+}
+
+.password-input-wrap input:focus{
+  border-color:#22d3ee;
+
+  box-shadow:
+    0 0 0 3px rgba(34,211,238,.10);
+}
+
+.password-toggle{
+  position:absolute;
+  top:50%;
+  right:10px;
+
+  transform:translateY(-50%);
+
+  padding:7px 10px;
+
+  border:0;
+  border-radius:7px;
+
+  background:#101c2e;
+  color:#22d3ee;
+
+  font-size:12px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.2s ease;
+}
+
+.password-toggle:hover{
+  background:#16263d;
+  color:#ffffff;
+}

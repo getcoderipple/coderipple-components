@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Schedule Calendar App | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="demo-stage">
+<div class="phone">
+
+  <div class="status-bar">
+
+    <span class="time" id="statusTime">6:13</span>
+
+    <div class="status-icons">
+
+      <svg width="18" height="10" viewBox="0 0 18 10" fill="none">
+        <rect x="0" y="6" width="3" height="4" rx="0.5" fill="#fff"></rect>
+        <rect x="4.5" y="4" width="3" height="6" rx="0.5" fill="#fff"></rect>
+        <rect x="9" y="2" width="3" height="8" rx="0.5" fill="#fff"></rect>
+        <rect x="13.5" y="0" width="3" height="10" rx="0.5" fill="#fff"></rect>
+      </svg>
+
+      <svg width="20" height="12" viewBox="0 0 20 12" fill="none">
+        <rect x="0.5" y="0.5" width="17" height="11" rx="2.5" stroke="#fff"></rect>
+        <rect x="2" y="2" width="14" height="8" rx="1" fill="#fff"></rect>
+        <rect x="18" y="4" width="1.5" height="4" rx="0.75" fill="#fff"></rect>
+      </svg>
+
+    </div>
+
+  </div>
+
+
+  <div class="tabs">
+
+    <button
+      class="tab active"
+      data-tab="schedule"
+      type="button">
+      Schedule
+    </button>
+
+    <button
+      class="tab"
+      data-tab="note"
+      type="button">
+      Note
+    </button>
+
+  </div>
+
+
+  <section
+    class="view schedule-view active"
+    id="scheduleView">
+
+    <div class="month-header">
+
+      <button
+        class="nav-btn"
+        id="prevMonth"
+        type="button"
+        aria-label="Previous month">
+        &#8249;
+      </button>
+
+      <h1
+        class="month-title"
+        id="monthTitle">
+        AUGUST 2026
+      </h1>
+
+      <button
+        class="nav-btn"
+        id="nextMonth"
+        type="button"
+        aria-label="Next month">
+        &#8250;
+      </button>
+
+    </div>
+
+
+    <div class="weekdays">
+      <span>SUN</span>
+      <span>MON</span>
+      <span>TUE</span>
+      <span>WED</span>
+      <span>THU</span>
+      <span>FRI</span>
+      <span>SAT</span>
+    </div>
+
+
+    <div
+      class="calendar-grid"
+      id="calendarGrid">
+    </div>
+
+
+    <div class="schedule-list-header">
+
+      <h2 id="scheduleListTitle">
+        August 31, 2026's Schedule
+      </h2>
+
+      <span
+        class="item-count"
+        id="itemCount">
+        2 items
+      </span>
+
+    </div>
+
+
+    <div
+      class="schedule-list"
+      id="scheduleList">
+    </div>
+
+  </section>
+
+
+  <section
+    class="view note-view"
+    id="noteView">
+
+    <div class="search-bar">
+
+      <svg
+        class="search-icon"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2">
+
+        <circle cx="11" cy="11" r="7"></circle>
+
+        <line
+          x1="21"
+          y1="21"
+          x2="16.65"
+          y2="16.65">
+        </line>
+
+      </svg>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search schedule..."
+        autocomplete="off">
+
+    </div>
+
+    <div
+      class="note-results"
+      id="noteResults">
+    </div>
+
+  </section>
+
+
+  <button
+    class="fab"
+    id="fabAdd"
+    type="button"
+    aria-label="Add schedule">
+    +
+  </button>
+
+
+  <div class="home-indicator"></div>
+
+
+  <div
+    class="sheet-backdrop"
+    id="sheetBackdrop">
+
+    <div
+      class="sheet"
+      id="sheet">
+
+      <div class="sheet-handle"></div>
+
+      <h2 class="sheet-title">
+        New Schedule
+      </h2>
+
+      <p
+        class="sheet-subtitle"
+        id="sheetSubtitle">
+        For September 1, 2026
+      </p>
+
+
+      <label
+        class="field-label"
+        for="titleInput">
+        Title
+      </label>
+
+      <input
+        type="text"
+        id="titleInput"
+        class="field-input"
+        placeholder="e.g. Team meeting">
+
+
+      <div class="field-row">
+
+        <div class="field-col">
+
+          <label
+            class="field-label"
+            for="startTimeInput">
+            Start time
+          </label>
+
+          <div class="time-input-wrap">
+
+            <input
+              type="text"
+              id="startTimeInput"
+              class="field-input"
+              value="09:00 AM"
+              readonly>
+
+          </div>
+
+        </div>
+
+
+        <div class="field-col">
+
+          <label
+            class="field-label"
+            for="endTimeInput">
+            End time
+          </label>
+
+          <div class="time-input-wrap">
+
+            <input
+              type="text"
+              id="endTimeInput"
+              class="field-input"
+              value="10:00 AM"
+              readonly>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <label
+        class="field-label"
+        for="placeInput">
+        Place
+      </label>
+
+      <input
+        type="text"
+        id="placeInput"
+        class="field-input"
+        placeholder="e.g. Office Room">
+
+
+      <label
+        class="field-label"
+        for="notesInput">
+        Notes
+      </label>
+
+      <textarea
+        id="notesInput"
+        class="field-input field-textarea"
+        placeholder="Write any extra details..."></textarea>
+
+
+      <div class="sheet-actions">
+
+        <button
+          class="btn btn-cancel"
+          id="cancelBtn"
+          type="button">
+          Cancel
+        </button>
+
+        <button
+          class="btn btn-save"
+          id="saveBtn"
+          type="button">
+          Save
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

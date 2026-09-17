@@ -1,0 +1,94 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.custom-checkbox{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+
+  color:#c7d2e5;
+  font-size:15px;
+
+  cursor:pointer;
+  user-select:none;
+}
+
+.custom-checkbox input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.checkbox-box{
+  width:22px;
+  height:22px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #33445f;
+  border-radius:6px;
+
+  background:#0b1423;
+
+  transition:.25s ease;
+}
+
+.checkbox-box svg{
+  width:15px;
+  height:15px;
+
+  fill:none;
+  stroke:#050914;
+  stroke-width:3;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+
+  transform:scale(0);
+
+  transition:.2s ease;
+}
+
+.custom-checkbox input:checked + .checkbox-box{
+  border-color:#22d3ee;
+  background:#22d3ee;
+
+  box-shadow:
+    0 0 16px rgba(34,211,238,.25);
+}
+
+.custom-checkbox input:checked + .checkbox-box svg{
+  transform:scale(1);
+}
+
+.custom-checkbox:hover .checkbox-box{
+  border-color:#22d3ee;
+}

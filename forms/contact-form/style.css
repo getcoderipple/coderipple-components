@@ -1,0 +1,145 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.contact-form{
+  width:100%;
+  max-width:650px;
+}
+
+.contact-form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.contact-field{
+  margin-bottom:18px;
+}
+
+.contact-field label{
+  display:block;
+  margin-bottom:8px;
+
+  color:#aab4c8;
+  font-size:13px;
+  font-weight:600;
+}
+
+.contact-field input,
+.contact-field textarea{
+  width:100%;
+
+  padding:14px 15px;
+
+  border:1px solid #263750;
+  border-radius:9px;
+
+  background:#0b1423;
+  color:#ffffff;
+
+  font:inherit;
+
+  outline:none;
+  resize:vertical;
+
+  transition:.25s ease;
+}
+
+.contact-field input::placeholder,
+.contact-field textarea::placeholder{
+  color:#65748b;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus{
+  border-color:#22d3ee;
+
+  box-shadow:
+    0 0 0 3px rgba(34,211,238,.10);
+}
+
+.contact-submit{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+
+  min-height:46px;
+  padding:0 20px;
+
+  border:0;
+  border-radius:9px;
+
+  background:linear-gradient(
+    135deg,
+    #22d3ee,
+    #7c3aed
+  );
+
+  color:#ffffff;
+
+  font-size:14px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+}
+
+.contact-submit:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(34,211,238,.18);
+}
+
+.contact-arrow{
+  transition:transform .25s ease;
+}
+
+.contact-submit:hover .contact-arrow{
+  transform:translateX(4px);
+}
+
+.contact-status{
+  min-height:20px;
+  margin:14px 0 0;
+
+  color:#22d3ee;
+  font-size:14px;
+}
+
+@media(max-width:600px){
+
+  .contact-form-row{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+}

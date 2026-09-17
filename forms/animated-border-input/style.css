@@ -1,0 +1,92 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.animated-border-wrap{
+  position:relative;
+  width:100%;
+  max-width:420px;
+  padding:2px;
+
+  border-radius:12px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #22d3ee,
+      #8b5cf6,
+      #d946ef,
+      #22d3ee
+    );
+
+  background-size:300% 300%;
+
+  transition:.25s ease;
+}
+
+.animated-border-wrap input{
+  width:100%;
+  padding:15px 16px;
+
+  border:0;
+  border-radius:10px;
+  outline:none;
+
+  background:#0b1423;
+  color:#ffffff;
+
+  font-size:16px;
+}
+
+.animated-border-wrap input::placeholder{
+  color:#65748b;
+}
+
+.animated-border-wrap:focus-within{
+  animation:borderFlow 3s linear infinite;
+
+  box-shadow:
+    0 0 22px rgba(34,211,238,.18);
+}
+
+@keyframes borderFlow{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+
+}

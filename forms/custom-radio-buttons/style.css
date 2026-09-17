@@ -1,0 +1,113 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.custom-radio-group{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
+.custom-radio{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+
+  color:#c7d2e5;
+  font-size:15px;
+
+  cursor:pointer;
+  user-select:none;
+}
+
+.custom-radio input{
+  position:absolute;
+  opacity:0;
+  pointer-events:none;
+}
+
+.radio-circle{
+  width:22px;
+  height:22px;
+  flex:0 0 22px;
+
+  position:relative;
+
+  border:2px solid #33445f;
+  border-radius:50%;
+
+  background:#0b1423;
+
+  transition:.25s ease;
+}
+
+.radio-circle::after{
+  content:"";
+
+  position:absolute;
+  top:50%;
+  left:50%;
+
+  width:10px;
+  height:10px;
+
+  border-radius:50%;
+
+  background:#22d3ee;
+
+  transform:translate(-50%, -50%) scale(0);
+
+  transition:.2s ease;
+}
+
+.custom-radio input:checked + .radio-circle{
+  border-color:#22d3ee;
+
+  box-shadow:
+    0 0 16px rgba(34,211,238,.25);
+}
+
+.custom-radio input:checked + .radio-circle::after{
+  transform:translate(-50%, -50%) scale(1);
+}
+
+.custom-radio:hover .radio-circle{
+  border-color:#22d3ee;
+}
+
+.custom-radio input:focus-visible + .radio-circle{
+  box-shadow:
+    0 0 0 3px rgba(34,211,238,.12);
+}
+
+.radio-text{
+  line-height:1.4;
+}

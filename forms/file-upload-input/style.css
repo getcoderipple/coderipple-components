@@ -1,0 +1,90 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.file-upload{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.file-upload input{
+  position:absolute;
+  width:1px;
+  height:1px;
+  opacity:0;
+  overflow:hidden;
+}
+
+.file-upload-button{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+
+  min-height:46px;
+  padding:0 18px;
+
+  border:1px solid #22d3ee;
+  border-radius:9px;
+
+  background:#0b1423;
+  color:#ffffff;
+
+  font-size:14px;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.25s ease;
+}
+
+.file-upload-button svg{
+  width:18px;
+  height:18px;
+
+  fill:none;
+  stroke:#22d3ee;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.file-upload-button:hover{
+  background:#101c2e;
+
+  box-shadow:
+    0 0 18px rgba(34,211,238,.18);
+}
+
+.file-upload-name{
+  color:#8190a5;
+  font-size:14px;
+}

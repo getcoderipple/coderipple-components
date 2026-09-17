@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Select Dropdown | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="demo-stage">
+<div class="custom-dropdown" data-dropdown>
+
+  <label>Choose Component</label>
+
+  <button
+    type="button"
+    class="dropdown-trigger"
+    data-dropdown-trigger
+    aria-expanded="false"
+  >
+
+    <span data-dropdown-value>
+      Select a category
+    </span>
+
+    <svg
+      class="dropdown-arrow"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+    >
+      <path d="M6 9l6 6 6-6"></path>
+    </svg>
+
+  </button>
+
+  <div class="dropdown-menu" data-dropdown-menu>
+
+    <button type="button" data-dropdown-option="Buttons">
+      Buttons
+    </button>
+
+    <button type="button" data-dropdown-option="Cards">
+      Cards
+    </button>
+
+    <button type="button" data-dropdown-option="Forms">
+      Forms
+    </button>
+
+    <button type="button" data-dropdown-option="Navigation">
+      Navigation
+    </button>
+
+  </div>
+
+</div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

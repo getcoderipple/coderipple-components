@@ -1,0 +1,330 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+.cr-auth-switcher{
+  width:100%;
+  min-height:600px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 24px;
+  background:
+    radial-gradient(circle at 50% 50%,rgba(99,102,241,.10),transparent 34%),
+    #050914;
+  font-family:Inter,Arial,sans-serif;
+}
+
+.cr-auth-shell{
+  position:relative;
+  width:min(820px,100%);
+  height:470px;
+  overflow:hidden;
+  background:#f8fafc;
+  border:1px solid rgba(148,163,184,.30);
+  border-radius:24px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.55),
+    0 0 35px rgba(99,102,241,.10);
+}
+
+.cr-auth-form{
+  position:absolute;
+  top:0;
+  width:50%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:42px 48px;
+  color:#111827;
+  transition:
+    opacity .42s ease,
+    transform .78s cubic-bezier(.77,0,.18,1);
+}
+
+.cr-login-form{
+  left:0;
+  opacity:1;
+  transform:translateX(0);
+  pointer-events:auto;
+}
+
+.cr-signup-form{
+  right:0;
+  opacity:0;
+  transform:translateX(34px);
+  pointer-events:none;
+}
+
+.cr-auth-shell.signup-active .cr-login-form{
+  opacity:0;
+  transform:translateX(-34px);
+  pointer-events:none;
+}
+
+.cr-auth-shell.signup-active .cr-signup-form{
+  opacity:1;
+  transform:translateX(0);
+  pointer-events:auto;
+}
+
+.cr-form-inner{
+  width:100%;
+  max-width:285px;
+}
+
+.cr-form-inner h2{
+  margin:0;
+  color:#111827;
+  font-size:32px;
+  font-weight:800;
+  line-height:1.1;
+}
+
+.cr-mini-line{
+  width:40px;
+  height:3px;
+  margin:10px 0 27px;
+  border-radius:20px;
+  background:linear-gradient(90deg,#22d3ee,#6366f1,#8b5cf6);
+  box-shadow:0 0 12px rgba(99,102,241,.35);
+}
+
+.cr-form-inner > label{
+  display:block;
+  margin:16px 0 6px;
+  color:#475569;
+  font-size:12px;
+  font-weight:700;
+}
+
+.cr-form-inner input[type="text"],
+.cr-form-inner input[type="email"],
+.cr-form-inner input[type="password"]{
+  width:100%;
+  height:42px;
+  padding:0 4px;
+  border:0;
+  border-bottom:1px solid #94a3b8;
+  border-radius:0;
+  outline:none;
+  background:transparent;
+  color:#111827;
+  font-family:inherit;
+  font-size:14px;
+}
+
+.cr-form-options{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:14px;
+}
+
+.cr-check{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  margin:0 !important;
+  color:#64748b;
+  font-size:11px;
+}
+
+.cr-check input{
+  width:13px;
+  height:13px;
+  margin:0;
+  accent-color:#6366f1;
+}
+
+.cr-text-btn{
+  padding:0;
+  border:0;
+  background:transparent !important;
+  color:#64748b;
+  font-family:inherit;
+  font-size:11px;
+  cursor:pointer;
+}
+
+.cr-auth-submit{
+  width:100%;
+  margin-top:24px;
+  padding:12px 20px;
+  border:0;
+  border-radius:30px;
+  background:linear-gradient(90deg,#0f172a,#111827);
+  color:#ffffff;
+  font-family:inherit;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.cr-form-inner p{
+  margin:16px 0 0;
+  color:#64748b;
+  font-size:11px;
+  text-align:center;
+}
+
+.cr-switch-btn{
+  padding:0;
+  border:0;
+  background:transparent !important;
+  color:#4f46e5;
+  font-family:inherit;
+  font-size:11px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.cr-wave-stage{
+  position:absolute;
+  z-index:5;
+  top:0;
+  right:0;
+  width:460px;
+  height:470px;
+  transform-origin:center center;
+  transition:
+    right .95s cubic-bezier(.77,0,.18,1),
+    transform .95s cubic-bezier(.77,0,.18,1);
+}
+
+.cr-wave-svg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:visible;
+  display:block;
+  pointer-events:none;
+}
+
+.cr-wave-shape{
+  filter:drop-shadow(-12px 0 22px rgba(0,0,0,.18));
+}
+
+.cr-wave-edge{
+  opacity:.95;
+}
+
+.cr-wave-stage::before{
+  content:"";
+  position:absolute;
+  z-index:2;
+  right:-40px;
+  top:-55px;
+  width:190px;
+  height:190px;
+  border-radius:50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(124,58,237,.27),
+      rgba(99,102,241,.08) 48%,
+      transparent 72%
+    );
+  pointer-events:none;
+}
+
+.cr-panel-content{
+  position:absolute;
+  z-index:10;
+  top:50%;
+  width:220px;
+  color:#ffffff;
+  transition:opacity .25s ease .32s;
+}
+
+.cr-panel-content h2{
+  margin:0 0 14px;
+  color:#ffffff;
+  font-size:31px;
+  font-weight:900;
+  line-height:1.05;
+}
+
+.cr-panel-content p{
+  margin:0;
+  color:#b7c4d8;
+  font-size:13px;
+  line-height:1.65;
+}
+
+.cr-panel-login{
+  right:42px;
+  transform:translateY(-50%);
+  opacity:1;
+}
+
+.cr-panel-signup{
+  left:150px;
+  width:190px;
+  transform:
+    translateY(-50%)
+    rotate(180deg);
+  opacity:0;
+}
+
+.cr-auth-shell.signup-active .cr-wave-stage{
+  right:360px;
+  transform:rotate(180deg);
+}
+
+.cr-auth-shell.signup-active .cr-panel-login{
+  opacity:0;
+}
+
+.cr-auth-shell.signup-active .cr-panel-signup{
+  opacity:1;
+}
+
+@media(max-width:700px){
+
+  .cr-auth-switcher{
+    min-height:580px;
+    padding:25px 14px;
+  }
+
+  .cr-auth-shell{
+    height:470px;
+  }
+
+  .cr-auth-form{
+    padding:30px 20px;
+  }
+
+}

@@ -1,0 +1,393 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.cr-orbit-login{
+  width:100%;
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px;
+  background:#0b1220;
+}
+
+.cr-orbit-panel{
+  position:relative;
+  width:560px;
+  height:560px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:70px 75px;
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(168,85,247,.15),
+      transparent 42%
+    ),
+    linear-gradient(
+      145deg,
+      #111827,
+      #080d18
+    );
+
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.55),
+    inset 0 0 45px rgba(168,85,247,.07);
+
+  color:#ffffff;
+}
+
+.cr-orbit-panel::before{
+  content:"";
+  position:absolute;
+  inset:-5px;
+  z-index:-1;
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #22d3ee,
+      #a855f7 42%,
+      #ec4899 68%,
+      #f97316
+    );
+
+  box-shadow:
+    0 0 30px rgba(168,85,247,.22);
+}
+
+.cr-orbit-panel::after{
+  content:"";
+  position:absolute;
+  inset:5px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:50%;
+  pointer-events:none;
+}
+
+.cr-orbit-head{
+  position:relative;
+  z-index:2;
+  width:100%;
+  margin-bottom:24px;
+  text-align:center;
+}
+
+.cr-orbit-head h2{
+  margin:0 0 5px;
+  color:#ffffff;
+  font-size:34px;
+  line-height:1.1;
+  font-weight:800;
+}
+
+.cr-orbit-head p{
+  margin:0;
+  color:#7f8da5;
+  font-size:12px;
+}
+
+.cr-orbit-form{
+  position:relative;
+  z-index:2;
+  width:100%;
+}
+
+.cr-orbit-field{
+  position:relative;
+  width:100%;
+  height:48px;
+  display:flex;
+  align-items:center;
+  margin-bottom:13px;
+  border:1px solid #263750;
+  border-radius:24px;
+  background:rgba(8,15,28,.72);
+
+  transition:
+    border-color .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+}
+
+.cr-orbit-field:focus-within{
+  border-color:#a855f7;
+  background:#0b1423;
+
+  box-shadow:
+    0 0 0 3px rgba(168,85,247,.08),
+    0 0 18px rgba(168,85,247,.12);
+}
+
+.cr-orbit-field-icon{
+  width:46px;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.cr-orbit-field-icon svg,
+.cr-orbit-password-toggle svg{
+  width:17px;
+  height:17px;
+  fill:none;
+  stroke:#718096;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.cr-orbit-field input{
+  width:100%;
+  min-width:0;
+  padding:0 10px 0 0;
+  border:0;
+  outline:0;
+  background:transparent;
+  color:#ffffff;
+  font-size:13px;
+  font-family:inherit;
+}
+
+.cr-orbit-field input::placeholder{
+  color:#65748b;
+}
+
+.cr-orbit-password-toggle{
+  width:42px;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  padding:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+}
+
+.cr-orbit-password-toggle:hover svg{
+  stroke:#22d3ee;
+}
+
+.cr-orbit-options{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  margin:2px 6px 17px;
+  font-size:11px;
+}
+
+.cr-orbit-check{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:#7f8da5;
+  cursor:pointer;
+}
+
+.cr-orbit-check input{
+  width:13px;
+  height:13px;
+  margin:0;
+  accent-color:#a855f7;
+}
+
+.cr-orbit-options a{
+  color:#a855f7;
+  text-decoration:none;
+}
+
+.cr-orbit-submit{
+  position:relative;
+  width:100%;
+  height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 18px;
+  border:0;
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ec4899 0%,
+      #a855f7 52%,
+      #2563eb 100%
+    );
+
+  color:#ffffff;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+
+  box-shadow:
+    0 8px 25px rgba(168,85,247,.22);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.cr-orbit-submit:hover{
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(168,85,247,.35);
+}
+
+.cr-orbit-submit:active{
+  transform:translateY(1px) scale(.985);
+
+  box-shadow:
+    0 3px 10px rgba(168,85,247,.18),
+    inset 0 3px 8px rgba(0,0,0,.28),
+    inset 0 -1px 2px rgba(255,255,255,.12);
+}
+
+.cr-orbit-arrow{
+  position:absolute;
+  right:20px;
+  font-size:19px;
+  transition:transform .25s ease;
+}
+
+.cr-orbit-submit:hover .cr-orbit-arrow{
+  transform:translateX(4px);
+}
+
+.cr-orbit-submit:active .cr-orbit-arrow{
+  transform:translateX(6px) scale(.95);
+}
+
+.cr-orbit-divider{
+  position:relative;
+  z-index:2;
+  width:100%;
+  display:flex;
+  align-items:center;
+  margin:17px 0 12px;
+  color:#5f6d82;
+  font-size:10px;
+  text-align:center;
+}
+
+.cr-orbit-divider::before,
+.cr-orbit-divider::after{
+  content:"";
+  height:1px;
+  flex:1;
+  background:rgba(255,255,255,.08);
+}
+
+.cr-orbit-divider span{
+  padding:0 12px;
+}
+
+.cr-orbit-socials{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+.cr-orbit-socials button{
+  width:38px;
+  height:38px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0;
+  border:1px solid #263750;
+  border-radius:12px;
+  background:#111a2a;
+  color:#b8c2d2;
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.cr-orbit-signup{
+  position:relative;
+  z-index:2;
+  margin:14px 0 0;
+  color:#65748b;
+  font-size:10px;
+  text-align:center;
+}
+
+.cr-orbit-signup a{
+  color:#ec4899;
+  font-weight:700;
+  text-decoration:none;
+}
+
+@media(max-width:620px){
+
+  .cr-orbit-login{
+    min-height:500px;
+    padding:20px 10px;
+  }
+
+  .cr-orbit-panel{
+    width:430px;
+    height:430px;
+    max-width:100%;
+    padding:48px 52px;
+  }
+
+  .cr-orbit-head{
+    margin-bottom:16px;
+  }
+
+  .cr-orbit-head h2{
+    font-size:27px;
+  }
+
+  .cr-orbit-field{
+    height:42px;
+    margin-bottom:9px;
+  }
+
+  .cr-orbit-submit{
+    height:42px;
+  }
+
+}
