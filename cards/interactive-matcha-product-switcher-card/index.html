@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Matcha Product Switcher Card | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="matcha-stage">
+
+  <div class="matcha-card" id="matchaCard">
+
+    <div class="matcha-media">
+
+      <img
+        id="matchaProductImage"
+        class="matcha-image"
+        src="assets/Matcha.png"
+        alt="Fresh pure matcha drink with matcha powder and tea leaves"
+      >
+
+      <div class="matcha-price">
+        $5.99
+      </div>
+
+      <div class="matcha-delivery">
+        Free Delivery Until
+        <strong id="matchaDeliveryDate"></strong>
+      </div>
+
+    </div>
+
+
+    <div class="matcha-info">
+
+      <div class="matcha-title-row">
+
+        <div>
+
+          <span class="matcha-kicker">
+            PURE MATCHA • GOOD MOOD
+          </span>
+
+          <h2 id="matchaTitle">
+            ICE MATCHA
+          </h2>
+
+        </div>
+
+
+        <a
+          href="#"
+          class="matcha-order"
+          id="matchaOrder"
+        >
+          Order Now
+          <span>↗</span>
+        </a>
+
+      </div>
+
+
+      <div class="matcha-options">
+
+        <button
+          class="matcha-option active"
+          type="button"
+          data-image="assets/Matcha.png"
+          data-alt="Fresh pure matcha drink with matcha powder and tea leaves"
+          data-title="ICE MATCHA"
+        >
+          <span class="matcha-dot matcha-dot-green"></span>
+          Matcha
+        </button>
+
+
+        <button
+          class="matcha-option"
+          type="button"
+          data-image="assets/Ice%20Cube.png"
+          data-alt="Fresh matcha drink with clear ice cubes"
+          data-title="ICED MATCHA"
+        >
+          <span class="matcha-dot matcha-dot-cyan"></span>
+          Ice Cube
+        </button>
+
+
+        <button
+          class="matcha-option"
+          type="button"
+          data-image="assets/Honey.png"
+          data-alt="Iced matcha drink with golden honey being poured"
+          data-title="HONEY MATCHA"
+        >
+          <span class="matcha-dot matcha-dot-purple"></span>
+          Honey
+        </button>
+
+
+        <button
+          class="matcha-option"
+          type="button"
+          data-image="assets/Milk.png"
+          data-alt="Iced matcha drink with fresh milk being poured"
+          data-title="MILK MATCHA"
+        >
+          <span class="matcha-dot matcha-dot-cream"></span>
+          Milk
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="matcha-preload" aria-hidden="true">
+
+      <img
+        src="assets/Ice%20Cube.png"
+        alt=""
+      >
+
+      <img
+        src="assets/Honey.png"
+        alt=""
+      >
+
+      <img
+        src="assets/Milk.png"
+        alt=""
+      >
+
+    </div>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
