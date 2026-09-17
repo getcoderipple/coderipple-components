@@ -1,0 +1,38 @@
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#050914;
+  font-family:Arial, sans-serif;
+}
+
+.neon-btn{
+  padding:15px 34px;
+  border:2px solid #22d3ee;
+  border-radius:10px;
+  background:transparent;
+  color:#22d3ee;
+  font-size:15px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:
+    0 0 10px rgba(34,211,238,.35),
+    inset 0 0 8px rgba(34,211,238,.08);
+  transition:
+    transform .25s ease,
+    color .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.neon-btn:hover{
+  color:#ffffff;
+  background:#22d3ee;
+  transform:translateY(-2px);
+  box-shadow:
+    0 0 18px rgba(34,211,238,.70),
+    0 0 38px rgba(34,211,238,.45),
+    0 0 55px rgba(34,211,238,.20);
+}
