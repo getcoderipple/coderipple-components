@@ -1,0 +1,38 @@
+.gradient-text{
+  display:inline-block;
+  margin:0;
+  font-size:64px;
+  font-weight:800;
+  line-height:1.1;
+
+  background:linear-gradient(
+    90deg,
+    #22d3ee,
+    #8b5cf6,
+    #d946ef,
+    #22d3ee
+  );
+
+  background-size:300% 100%;
+  background-clip:text;
+  -webkit-background-clip:text;
+
+  color:transparent;
+  -webkit-text-fill-color:transparent;
+
+  animation:gradientTextMove 5s linear infinite;
+}
+
+@keyframes gradientTextMove{
+  0%{
+    background-position:0% 50%;
+  }
+
+  100%{
+    background-position:300% 50%;
+  }
+}
+
+/* Standalone preview fallback */
+html, body { min-height: 100%; }
+body { margin: 0; background: #050914; }

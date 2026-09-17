@@ -1,0 +1,38 @@
+.neon-glow-text{
+  margin:0;
+  color:#ffffff;
+  font-size:64px;
+  font-weight:800;
+  line-height:1.1;
+  letter-spacing:2px;
+
+  text-shadow:
+    0 0 5px #22d3ee,
+    0 0 10px #22d3ee,
+    0 0 20px #22d3ee,
+    0 0 40px #8b5cf6;
+
+  animation:neonPulse 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse{
+  from{
+    text-shadow:
+      0 0 5px #22d3ee,
+      0 0 10px #22d3ee,
+      0 0 20px #22d3ee,
+      0 0 40px #8b5cf6;
+  }
+
+  to{
+    text-shadow:
+      0 0 8px #22d3ee,
+      0 0 18px #22d3ee,
+      0 0 32px #8b5cf6,
+      0 0 55px #d946ef;
+  }
+}
+
+/* Standalone preview fallback */
+html, body { min-height: 100%; }
+body { margin: 0; background: #050914; }

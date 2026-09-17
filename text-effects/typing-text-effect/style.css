@@ -1,0 +1,44 @@
+.typing-text-wrap{
+  display:inline-block;
+}
+
+.typing-text{
+  display:inline-block;
+  overflow:hidden;
+  white-space:nowrap;
+  width:0;
+  color:#ffffff;
+  font-size:48px;
+  font-weight:800;
+  line-height:1.2;
+  border-right:3px solid #22d3ee;
+
+  animation:
+    typingText 3.5s steps(23, end) infinite alternate,
+    typingCursor .7s step-end infinite;
+}
+
+@keyframes typingText{
+  from{
+    width:0;
+  }
+
+  to{
+    width:23ch;
+  }
+}
+
+@keyframes typingCursor{
+  0%,
+  100%{
+    border-color:transparent;
+  }
+
+  50%{
+    border-color:#22d3ee;
+  }
+}
+
+/* Standalone preview fallback */
+html, body { min-height: 100%; }
+body { margin: 0; background: #050914; }
