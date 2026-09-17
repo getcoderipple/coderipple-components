@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Travel Destination Slider | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="cr-travel-stage">
+
+  <div class="cr-travel-slider" id="travelSlider">
+
+    <div class="cr-travel-bg">
+
+      <img
+        id="travelHeroImage"
+        src="assets/Alpine.png"
+        alt="Swiss Alps mountain village beside a clear blue lake"
+      >
+
+    </div>
+
+
+    <div class="cr-travel-overlay"></div>
+
+
+    <div class="cr-travel-content">
+
+      <span class="cr-travel-kicker">
+        DISCOVER THE WORLD
+      </span>
+
+      <h2 id="travelTitle">
+        Swiss Alps
+      </h2>
+
+      <p id="travelDescription">
+        Crystal-clear lakes, dramatic mountain peaks and
+        unforgettable Alpine landscapes.
+      </p>
+
+      <button
+        class="cr-travel-explore"
+        type="button"
+      >
+        Explore
+        <span>↗</span>
+      </button>
+
+    </div>
+
+
+    <div class="cr-travel-cards">
+
+
+      <button
+        class="cr-travel-card active"
+        type="button"
+        data-image="assets/Alpine.png"
+        data-alt="Swiss Alps mountain village beside a clear blue lake"
+        data-title="Swiss Alps"
+        data-description="Crystal-clear lakes, dramatic mountain peaks and unforgettable Alpine landscapes."
+      >
+
+        <img
+          src="assets/Alpine.png"
+          alt=""
+        >
+
+        <span class="cr-card-shade"></span>
+
+        <span class="cr-card-number">01</span>
+
+        <span class="cr-card-copy">
+          <small>SWITZERLAND</small>
+          <strong>Swiss Alps</strong>
+        </span>
+
+      </button>
+
+
+      <button
+        class="cr-travel-card"
+        type="button"
+        data-image="assets/Sakura.png"
+        data-alt="Mount Fuji with Japanese pagoda and pink cherry blossoms at sunset"
+        data-title="Kyoto Japan"
+        data-description="Cherry blossoms, iconic temples and peaceful Japanese scenery beneath a glowing sunset."
+      >
+
+        <img
+          src="assets/Sakura.png"
+          alt=""
+        >
+
+        <span class="cr-card-shade"></span>
+
+        <span class="cr-card-number">02</span>
+
+        <span class="cr-card-copy">
+          <small>JAPAN</small>
+          <strong>Kyoto</strong>
+        </span>
+
+      </button>
+
+
+      <button
+        class="cr-travel-card"
+        type="button"
+        data-image="assets/Marrakech.png"
+        data-alt="Marrakech market and historic minaret glowing at sunset"
+        data-title="Marrakech"
+        data-description="Golden sunsets, vibrant markets and rich Moroccan architecture filled with color and energy."
+      >
+
+        <img
+          src="assets/Marrakech.png"
+          alt=""
+        >
+
+        <span class="cr-card-shade"></span>
+
+        <span class="cr-card-number">03</span>
+
+        <span class="cr-card-copy">
+          <small>MOROCCO</small>
+          <strong>Marrakech</strong>
+        </span>
+
+      </button>
+
+
+      <button
+        class="cr-travel-card"
+        type="button"
+        data-image="assets/Yosemite.png"
+        data-alt="Yosemite Valley with mountains waterfall and river at sunset"
+        data-title="Yosemite"
+        data-description="Towering granite cliffs, waterfalls and wild landscapes illuminated by the setting sun."
+      >
+
+        <img
+          src="assets/Yosemite.png"
+          alt=""
+        >
+
+        <span class="cr-card-shade"></span>
+
+        <span class="cr-card-number">04</span>
+
+        <span class="cr-card-copy">
+          <small>CALIFORNIA</small>
+          <strong>Yosemite</strong>
+        </span>
+
+      </button>
+
+    </div>
+
+
+    <div class="cr-travel-controls">
+
+      <button
+        class="cr-travel-arrow"
+        id="travelPrev"
+        type="button"
+        aria-label="Previous destination"
+      >
+        ←
+      </button>
+
+
+      <div class="cr-travel-progress">
+
+        <span
+          class="cr-travel-current"
+          id="travelCurrent"
+        >
+          01
+        </span>
+
+        <span class="cr-travel-line">
+          <i id="travelProgress"></i>
+        </span>
+
+        <span class="cr-travel-total">
+          04
+        </span>
+
+      </div>
+
+
+      <button
+        class="cr-travel-arrow"
+        id="travelNext"
+        type="button"
+        aria-label="Next destination"
+      >
+        →
+      </button>
+
+    </div>
+
+
+    <div class="cr-travel-preload" aria-hidden="true">
+
+      <img
+        src="assets/Sakura.png"
+        alt=""
+      >
+
+      <img
+        src="assets/Marrakech.png"
+        alt=""
+      >
+
+      <img
+        src="assets/Yosemite.png"
+        alt=""
+      >
+
+    </div>
+
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
