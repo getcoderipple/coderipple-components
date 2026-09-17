@@ -1,0 +1,114 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.cursor-spotlight-area{
+  position:relative;
+  width:100%;
+  min-height:240px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+  cursor:crosshair;
+
+  background:
+    linear-gradient(
+      135deg,
+      #050914,
+      #09111f
+    );
+}
+
+.cursor-spotlight{
+  position:absolute;
+  top:0;
+  left:0;
+
+  width:280px;
+  height:280px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(34,211,238,.24) 0%,
+      rgba(34,211,238,.14) 25%,
+      rgba(139,92,246,.08) 45%,
+      transparent 72%
+    );
+
+  pointer-events:none;
+
+  transform:translate(-50%, -50%);
+
+  filter:blur(4px);
+
+  z-index:1;
+}
+
+.spotlight-content{
+  position:relative;
+  z-index:2;
+
+  text-align:center;
+
+  pointer-events:none;
+}
+
+.spotlight-content span{
+  display:inline-block;
+
+  color:#22d3ee;
+
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+}
+
+.spotlight-content h2{
+  margin:10px 0 8px;
+
+  color:#ffffff;
+
+  font-size:34px;
+  line-height:1.2;
+}
+
+.spotlight-content p{
+  margin:0;
+
+  color:#94a3b8;
+
+  font-size:15px;
+  line-height:1.6;
+}

@@ -1,0 +1,110 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.click-ripple-area{
+  position:relative;
+  width:100%;
+  min-height:220px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+  cursor:pointer;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(34,211,238,.04),
+      transparent 55%
+    ),
+    #070d19;
+}
+
+.click-ripple-content{
+  position:relative;
+  z-index:2;
+
+  color:#c7d2e5;
+  font-size:16px;
+  font-weight:600;
+  text-align:center;
+
+  pointer-events:none;
+}
+
+.click-ripple{
+  position:absolute;
+  z-index:1;
+
+  width:20px;
+  height:20px;
+
+  border:2px solid #22d3ee;
+  border-radius:50%;
+
+  background:rgba(34,211,238,.08);
+
+  pointer-events:none;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0);
+
+  box-shadow:
+    0 0 20px rgba(34,211,238,.25);
+
+  animation:
+    clickRipple .7s ease-out forwards;
+}
+
+@keyframes clickRipple{
+
+  0%{
+    opacity:1;
+
+    transform:
+      translate(-50%, -50%)
+      scale(0);
+  }
+
+  60%{
+    opacity:.6;
+  }
+
+  100%{
+    opacity:0;
+
+    transform:
+      translate(-50%, -50%)
+      scale(6);
+  }
+}

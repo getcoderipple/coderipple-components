@@ -1,0 +1,134 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.cursor-ring-area{
+  position:relative;
+  width:100%;
+  min-height:220px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+  cursor:none;
+}
+
+.cursor-ring{
+  position:absolute;
+  top:0;
+  left:0;
+  z-index:10;
+
+  width:34px;
+  height:34px;
+
+  border:2px solid #22d3ee;
+  border-radius:50%;
+
+  background:rgba(34,211,238,.03);
+
+  pointer-events:none;
+
+  opacity:0;
+
+  transform:
+    translate(-50%, -50%);
+
+  box-shadow:
+    0 0 18px rgba(34,211,238,.22);
+
+  transition:
+    width .18s ease,
+    height .18s ease,
+    background .18s ease,
+    border-color .18s ease,
+    opacity .15s ease;
+}
+
+.cursor-ring-area:hover .cursor-ring{
+  opacity:1;
+}
+
+.cursor-ring.active{
+  width:64px;
+  height:64px;
+
+  background:
+    rgba(34,211,238,.10);
+
+  border-color:#8b5cf6;
+
+  box-shadow:
+    0 0 28px rgba(139,92,246,.25);
+}
+
+.cursor-ring-items{
+  position:relative;
+  z-index:2;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+
+  gap:18px;
+}
+
+.cursor-ring-item{
+  padding:14px 20px;
+
+  border:1px solid #263750;
+  border-radius:10px;
+
+  background:#0b1423;
+
+  color:#ffffff;
+
+  font-size:14px;
+  font-weight:700;
+
+  text-decoration:none;
+
+  cursor:none;
+
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    transform .2s ease;
+}
+
+.cursor-ring-item:hover{
+  background:#101c2e;
+  border-color:#22d3ee;
+
+  transform:
+    translateY(-2px);
+}

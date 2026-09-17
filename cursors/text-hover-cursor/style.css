@@ -1,0 +1,120 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.text-cursor-area{
+  position:relative;
+  width:100%;
+  min-height:220px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+  cursor:none;
+}
+
+.text-hover-cursor{
+  position:absolute;
+  top:0;
+  left:0;
+
+  min-width:58px;
+  height:58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0 12px;
+
+  border-radius:50%;
+
+  background:#22d3ee;
+  color:#050914;
+
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
+
+  pointer-events:none;
+
+  transform:translate(-50%, -50%);
+
+  box-shadow:
+    0 0 22px rgba(34,211,238,.28);
+
+  z-index:9999;
+
+  transition:
+    min-width .2s ease,
+    background .2s ease;
+}
+
+.text-cursor-items{
+  position:relative;
+  z-index:1;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-wrap:wrap;
+
+  gap:16px;
+}
+
+.text-cursor-item{
+  padding:14px 18px;
+
+  border:1px solid #263750;
+  border-radius:10px;
+
+  background:#0b1423;
+
+  color:#ffffff;
+  text-decoration:none;
+
+  font-size:14px;
+  font-weight:700;
+
+  cursor:none;
+
+  transition:
+    border-color .2s ease,
+    background .2s ease,
+    transform .2s ease;
+}
+
+.text-cursor-item:hover{
+  border-color:#22d3ee;
+  background:#101c2e;
+
+  transform:translateY(-2px);
+}

@@ -1,0 +1,103 @@
+/* CodeRipple GitHub preview wrapper */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #050914;
+  color: #ffffff;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.demo-stage {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+.demo-stage > * {
+  width: 100%;
+}
+
+.blob-cursor-area{
+  position:relative;
+  width:100%;
+  min-height:220px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+  cursor:none;
+}
+
+.blob-cursor{
+  position:absolute;
+  top:0;
+  left:0;
+
+  width:70px;
+  height:70px;
+
+  border-radius:
+    42% 58% 61% 39% /
+    45% 38% 62% 55%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34,211,238,.55),
+      rgba(139,92,246,.45)
+    );
+
+  pointer-events:none;
+
+  transform:translate(-50%, -50%);
+
+  filter:blur(1px);
+
+  box-shadow:
+    0 0 28px rgba(34,211,238,.18);
+
+  animation:
+    blobShape 4s ease-in-out infinite;
+
+  z-index:9999;
+}
+
+@keyframes blobShape{
+
+  0%,100%{
+    border-radius:
+      42% 58% 61% 39% /
+      45% 38% 62% 55%;
+  }
+
+  50%{
+    border-radius:
+      60% 40% 38% 62% /
+      38% 60% 40% 62%;
+  }
+}
+
+.blob-cursor-content{
+  position:relative;
+  z-index:1;
+
+  color:#c7d2e5;
+  font-size:16px;
+  font-weight:600;
+  text-align:center;
+
+  pointer-events:none;
+}
