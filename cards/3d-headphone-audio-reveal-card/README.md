@@ -1,31 +1,21 @@
 # 3D Headphone Audio Reveal Card
 
-Create a 3D headphone audio reveal card with animated equalizer bars, neon product styling, responsive behavior, click-based expansion, and pointer-controlled perspective effects.
+A reusable card component built with HTML, CSS and JavaScript. Use it as a clean starting point for modern websites and frontend projects.
 
-Part of the [CodeRipple](https://getcoderipple.com) component library.
+## Live Demo & Full Tutorial
 
-## Features
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
 
-- Standalone reusable component
-- Clean HTML and CSS
-- Vanilla JavaScript interaction
-- Local image assets included
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/3d-headphone-audio-reveal-card/)**
 
 ## Files
 
-- `index.html`
-- `style.css`
-- `script.js`
-- `assets/`
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
+- `script.js` — component interaction
 
-## Usage
+## About This Component
 
-Open `index.html` in a browser to preview the component.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-## Live Tutorial
-
-[3D Headphone Audio Reveal Card – CodeRipple](https://getcoderipple.com/3d-headphone-audio-reveal-card/)
-
-## License
-
-MIT License.
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**

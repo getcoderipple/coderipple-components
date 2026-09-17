@@ -1,29 +1,20 @@
 # Profile Card
 
-Create a dark Profile Card with a gradient avatar, user role, biography, three-column statistics, and Follow and Message buttons using only HTML and CSS.
+A reusable card component built with HTML and CSS. Use it as a clean starting point for modern websites and frontend projects.
 
-Part of the [CodeRipple](https://getcoderipple.com) component library.
+## Live Demo & Full Tutorial
 
-## Features
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
 
-- Standalone reusable component
-- Clean HTML and CSS
-- No JavaScript required
-
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/profile-card/)**
 
 ## Files
 
-- `index.html`
-- `style.css`
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
 
-## Usage
+## About This Component
 
-Open `index.html` in a browser to preview the component.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-## Live Tutorial
-
-[Profile Card – CodeRipple](https://getcoderipple.com/profile-card/)
-
-## License
-
-MIT License.
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**

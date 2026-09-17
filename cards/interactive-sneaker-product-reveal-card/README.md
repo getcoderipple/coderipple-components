@@ -1,31 +1,21 @@
 # Interactive Sneaker Product Reveal Card
 
-Build an Interactive Sneaker Product Reveal Card with click-based expansion, sliding sneaker artwork, responsive styling, animated product copy, and a compact circular trigger.
+A reusable card component built with HTML, CSS and JavaScript. Use it as a clean starting point for modern websites and frontend projects.
 
-Part of the [CodeRipple](https://getcoderipple.com) component library.
+## Live Demo & Full Tutorial
 
-## Features
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
 
-- Standalone reusable component
-- Clean HTML and CSS
-- Vanilla JavaScript interaction
-- Local image assets included
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/interactive-sneaker-product-reveal-card/)**
 
 ## Files
 
-- `index.html`
-- `style.css`
-- `script.js`
-- `assets/`
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
+- `script.js` — component interaction
 
-## Usage
+## About This Component
 
-Open `index.html` in a browser to preview the component.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-## Live Tutorial
-
-[Interactive Sneaker Product Reveal Card – CodeRipple](https://getcoderipple.com/interactive-sneaker-product-reveal-card/)
-
-## License
-
-MIT License.
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**

@@ -1,29 +1,20 @@
 # Feature Card
 
-Create a Feature Card with a gradient icon, supporting text, animated arrow, flexible sizing, and smooth CSS hover effects without using JavaScript.
+A reusable card component built with HTML and CSS. Use it as a clean starting point for modern websites and frontend projects.
 
-Part of the [CodeRipple](https://getcoderipple.com) component library.
+## Live Demo & Full Tutorial
 
-## Features
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
 
-- Standalone reusable component
-- Clean HTML and CSS
-- No JavaScript required
-
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/feature-card/)**
 
 ## Files
 
-- `index.html`
-- `style.css`
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
 
-## Usage
+## About This Component
 
-Open `index.html` in a browser to preview the component.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-## Live Tutorial
-
-[Feature Card – CodeRipple](https://getcoderipple.com/feature-card/)
-
-## License
-
-MIT License.
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**

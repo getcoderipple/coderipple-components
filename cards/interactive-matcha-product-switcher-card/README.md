@@ -1,31 +1,21 @@
 # Interactive Matcha Product Switcher Card
 
-Build an Interactive Matcha Product Switcher Card with selectable drink variations, animated image changes, dynamic product titles, a current delivery date, and a responsive mobile layout.
+A reusable card component built with HTML, CSS and JavaScript. Use it as a clean starting point for modern websites and frontend projects.
 
-Part of the [CodeRipple](https://getcoderipple.com) component library.
+## Live Demo & Full Tutorial
 
-## Features
+See the component in action, explore the implementation and follow the complete tutorial on CodeRipple.
 
-- Standalone reusable component
-- Clean HTML and CSS
-- Vanilla JavaScript interaction
-- Local image assets included
+👉 **[View Live Demo & Full Tutorial on CodeRipple](https://getcoderipple.com/interactive-matcha-product-switcher-card/)**
 
 ## Files
 
-- `index.html`
-- `style.css`
-- `script.js`
-- `assets/`
+- `index.html` — component markup and standalone preview
+- `style.css` — component styling
+- `script.js` — component interaction
 
-## Usage
+## About This Component
 
-Open `index.html` in a browser to preview the component.
+This component is part of the CodeRipple collection of reusable frontend UI components and effects.
 
-## Live Tutorial
-
-[Interactive Matcha Product Switcher Card – CodeRipple](https://getcoderipple.com/interactive-matcha-product-switcher-card/)
-
-## License
-
-MIT License.
+**[Explore More Frontend Components on CodeRipple](https://getcoderipple.com/components/)**
