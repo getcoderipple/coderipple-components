@@ -27,3 +27,19 @@ social-cta-gradient-button/
 ├── index.html
 ├── style.css
 └── README.md
+
+## Usage
+
+Open `index.html` in your browser to preview the component.
+
+You can customize the button text, gradient colors, spacing, border radius and hover effects directly in the HTML and CSS files.
+
+## Live Tutorial
+
+For the full tutorial, live preview and implementation guide, visit:
+
+[Social CTA Gradient Button – CodeRipple](https://getcoderipple.com/)
+
+## License
+
+This component is available under the MIT License.
