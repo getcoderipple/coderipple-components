@@ -1,0 +1,224 @@
+.volt-stage{
+  width:100%;
+  min-height:560px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:120px 40px;
+  background:#070d19;
+  overflow:visible;
+}
+
+.volt-product-card{
+  position:relative;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:
+    linear-gradient(
+      135deg,
+      #0a1220,
+      #101a2b
+    );
+  border:1px solid rgba(34,211,238,.25);
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.4),
+    0 0 30px rgba(34,211,238,.08);
+  overflow:visible;
+  transition:
+    width .65s cubic-bezier(.22,.9,.34,1),
+    height .65s cubic-bezier(.22,.9,.34,1),
+    border-radius .65s ease,
+    box-shadow .4s ease;
+}
+
+.volt-trigger{
+  position:absolute;
+  inset:0;
+  width:120px;
+  height:120px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:transparent;
+  cursor:pointer;
+  z-index:5;
+  transition:
+    transform .45s ease,
+    opacity .35s ease;
+}
+
+.volt-trigger img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:contain;
+}
+
+.volt-content{
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  opacity:0;
+  pointer-events:none;
+  transition:
+    opacity .3s ease .18s;
+}
+
+.volt-copy{
+  width:52%;
+  padding-left:42px;
+  transform:translateX(-18px);
+  transition:
+    transform .45s ease .2s;
+}
+
+.volt-kicker{
+  display:inline-block;
+  margin-bottom:10px;
+  color:#22d3ee;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.8px;
+}
+
+.volt-copy h2{
+  margin:0 0 12px;
+  color:#ffffff;
+  font-size:38px;
+  line-height:1;
+}
+
+.volt-copy p{
+  margin:0 0 20px;
+  max-width:250px;
+  color:#aab4c8;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.volt-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:42px;
+  padding:0 18px;
+  border:1px solid rgba(34,211,238,.45);
+  border-radius:999px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(34,211,238,.18),
+      rgba(59,130,246,.18)
+    );
+  color:#ffffff;
+  font-size:13px;
+  font-weight:700;
+  text-decoration:none;
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.volt-btn:hover{
+  transform:translateY(-2px);
+  border-color:#22d3ee;
+  box-shadow:
+    0 0 18px rgba(34,211,238,.2);
+}
+
+.volt-sneaker{
+  position:absolute;
+  right:-85px;
+  bottom:-28px;
+  width:330px;
+  max-width:none;
+  opacity:0;
+  transform:
+    translateX(80px)
+    translateY(35px)
+    rotate(-9deg)
+    scale(.72);
+  transform-origin:50% 50%;
+  filter:
+    drop-shadow(
+      0 28px 22px rgba(0,0,0,.45)
+    );
+  pointer-events:none;
+  transition:
+    opacity .35s ease .12s,
+    transform .65s cubic-bezier(.22,.9,.34,1) .08s;
+}
+
+.volt-product-card.active{
+  width:620px;
+  height:290px;
+  border-radius:28px;
+  box-shadow:
+    0 30px 70px rgba(0,0,0,.5),
+    0 0 45px rgba(34,211,238,.12);
+}
+
+.volt-product-card.active .volt-trigger{
+  opacity:0;
+  transform:
+    scale(.55)
+    rotate(-12deg);
+  pointer-events:none;
+}
+
+.volt-product-card.active .volt-content{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.volt-product-card.active .volt-copy{
+  transform:translateX(0);
+}
+
+.volt-product-card.active .volt-sneaker{
+  opacity:1;
+  transform:
+    translateX(0)
+    translateY(0)
+    rotate(-7deg)
+    scale(1);
+}
+
+@media(max-width:700px){
+
+  .volt-stage{
+    min-height:650px;
+    padding:110px 18px;
+  }
+
+  .volt-product-card.active{
+    width:92%;
+    max-width:420px;
+    height:430px;
+  }
+
+  .volt-copy{
+    width:100%;
+    padding:
+      34px
+      28px
+      0;
+  }
+
+  .volt-copy h2{
+    font-size:32px;
+  }
+
+  .volt-sneaker{
+    right:-25px;
+    bottom:-60px;
+    width:300px;
+  }
+
+}
+
+html,body{min-height:100%;}
+body{margin:0;background:#050914;}
