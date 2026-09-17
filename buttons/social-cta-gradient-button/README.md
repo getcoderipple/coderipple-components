@@ -27,6 +27,7 @@ social-cta-gradient-button/
 ├── index.html
 ├── style.css
 └── README.md
+```
 
 ## Usage
 
