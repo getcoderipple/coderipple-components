@@ -1,0 +1,16 @@
+.spinning-ring-loader{
+  width:56px;
+  height:56px;
+  border:6px solid rgba(34,211,238,.18);
+  border-top-color:#22d3ee;
+  border-right-color:#8b5cf6;
+  border-radius:50%;
+
+  animation:ringSpin .8s linear infinite;
+}
+
+@keyframes ringSpin{
+  to{
+    transform:rotate(360deg);
+  }
+}

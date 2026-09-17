@@ -1,0 +1,42 @@
+.bars-loader{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  height:50px;
+}
+
+.bars-loader span{
+  width:7px;
+  height:18px;
+  border-radius:4px;
+  background:#22d3ee;
+  animation:barsWave 1s ease-in-out infinite;
+}
+
+.bars-loader span:nth-child(2){
+  animation-delay:.1s;
+}
+
+.bars-loader span:nth-child(3){
+  animation-delay:.2s;
+}
+
+.bars-loader span:nth-child(4){
+  animation-delay:.3s;
+}
+
+.bars-loader span:nth-child(5){
+  animation-delay:.4s;
+}
+
+@keyframes barsWave{
+  0%,100%{
+    height:18px;
+    opacity:.45;
+  }
+
+  50%{
+    height:46px;
+    opacity:1;
+  }
+}

@@ -1,0 +1,29 @@
+.square-flip-loader{
+  width:52px;
+  height:52px;
+  border-radius:8px;
+  background:linear-gradient(
+    135deg,
+    #22d3ee,
+    #8b5cf6
+  );
+
+  box-shadow:
+    0 0 24px rgba(34,211,238,.2);
+
+  animation:squareFlip 1.4s ease-in-out infinite;
+}
+
+@keyframes squareFlip{
+  0%{
+    transform:perspective(120px) rotateX(0) rotateY(0);
+  }
+
+  50%{
+    transform:perspective(120px) rotateX(-180deg) rotateY(0);
+  }
+
+  100%{
+    transform:perspective(120px) rotateX(-180deg) rotateY(-180deg);
+  }
+}

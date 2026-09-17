@@ -1,0 +1,29 @@
+.gradient-spinner-loader{
+  width:64px;
+  height:64px;
+  padding:5px;
+  border-radius:50%;
+
+  background:conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    #22d3ee 120deg,
+    #8b5cf6 240deg,
+    #d946ef 360deg
+  );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+
+  animation:gradientSpinner 1s linear infinite;
+}
+
+@keyframes gradientSpinner{
+  to{
+    transform:rotate(360deg);
+  }
+}

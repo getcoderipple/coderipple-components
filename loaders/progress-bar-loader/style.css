@@ -1,0 +1,34 @@
+.progress-loader{
+  width:260px;
+  height:10px;
+  overflow:hidden;
+  background:#111b2b;
+  border-radius:20px;
+}
+
+.progress-loader-bar{
+  width:45%;
+  height:100%;
+  border-radius:20px;
+
+  background:linear-gradient(
+    90deg,
+    #22d3ee,
+    #8b5cf6,
+    #d946ef
+  );
+
+  box-shadow:0 0 16px rgba(34,211,238,.45);
+
+  animation:progressMove 1.5s ease-in-out infinite;
+}
+
+@keyframes progressMove{
+  0%{
+    transform:translateX(-110%);
+  }
+
+  100%{
+    transform:translateX(245%);
+  }
+}
