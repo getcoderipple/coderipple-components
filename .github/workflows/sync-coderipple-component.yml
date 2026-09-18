@@ -2,14 +2,56 @@ name: CodeRipple Component Sync
 
 on:
   workflow_dispatch:
+    inputs:
+      slug:
+        description: "CodeRipple component post slug"
+        required: true
+        default: "animated-delivery-order-button"
 
 jobs:
   api-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Test CodeRipple API
+      - name: Fetch CodeRipple Component
         run: |
-          echo "CodeRipple automation workflow is running."
-          curl -f https://getcoderipple.com/wp-json/
-          echo "CodeRipple API connection successful."
+          echo "Fetching component: ${{ inputs.slug }}"
+
+          curl -f \
+            "https://getcoderipple.com/wp-json/coderipple/v1/component?slug=${{ inputs.slug }}" \
+            -o component.json
+
+          echo "Component API response received successfully."
+
+      - name: Verify Component Data
+        run: |
+          python3 - <<'PY'
+          import json
+
+          with open("component.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          print("Title:", data.get("title"))
+          print("Slug:", data.get("slug"))
+          print("Categories:", data.get("categories"))
+
+          code = data.get("component_code", {})
+
+          print("HTML received:", bool(code.get("html")))
+          print("CSS received:", bool(code.get("css")))
+          print("JavaScript received:", bool(code.get("javascript")))
+
+          if not data.get("title"):
+              raise SystemExit("Missing component title")
+
+          if not code.get("html"):
+              raise SystemExit("Missing HTML")
+
+          if not code.get("css"):
+              raise SystemExit("Missing CSS")
+
+          if not code.get("javascript"):
+              raise SystemExit("Missing JavaScript")
+
+          print("CodeRipple component data verified successfully.")
+          PY
