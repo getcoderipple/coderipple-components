@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Interactive Shred Delete Button | CodeRipple</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="cr-shred-demo">
+
+    <button
+      class="cr-shred-btn"
+      id="crShredBtn"
+      type="button"
+      aria-label="Delete item"
+    >
+
+      <span class="cr-trash" aria-hidden="true">
+
+        <span class="cr-trash-lid"></span>
+
+        <span class="cr-trash-body">
+          <span></span>
+          <span></span>
+        </span>
+
+      </span>
+
+      <span
+        class="cr-delete-text"
+        id="crDeleteText"
+      >
+        Delete
+      </span>
+
+      <span
+        class="cr-loader-ring"
+        aria-hidden="true"
+      ></span>
+
+      <span
+        class="cr-success-check"
+        aria-hidden="true"
+      >
+        ✓
+      </span>
+
+    </button>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
