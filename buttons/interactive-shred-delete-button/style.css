@@ -1,0 +1,479 @@
+*{
+  box-sizing:border-box;
+}
+
+.cr-shred-demo{
+  width:100%;
+  min-height:360px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:40px 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(239,68,68,.12),
+      transparent 35%
+    ),
+    #050914;
+
+  font-family:Inter,Arial,sans-serif;
+}
+
+.cr-shred-btn{
+  position:relative;
+
+  min-width:190px;
+  height:58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+
+  padding:0 26px;
+
+  overflow:visible;
+
+  border:1px solid rgba(248,113,113,.35);
+  border-radius:16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #17101a,
+      #0d111c
+    );
+
+  color:#ffffff;
+
+  font-family:inherit;
+  font-size:15px;
+  font-weight:800;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.38),
+    0 0 25px rgba(239,68,68,.08);
+
+  transition:
+    width .45s cubic-bezier(.77,0,.18,1),
+    min-width .45s cubic-bezier(.77,0,.18,1),
+    border-radius .45s ease,
+    background .3s ease,
+    border-color .3s ease,
+    transform .25s ease,
+    box-shadow .3s ease;
+}
+
+.cr-shred-btn:hover{
+  transform:translateY(-2px);
+
+  border-color:rgba(248,113,113,.65);
+
+  box-shadow:
+    0 22px 55px rgba(0,0,0,.42),
+    0 0 28px rgba(239,68,68,.16);
+}
+
+
+/* =========================================
+   TRASH ICON
+========================================= */
+
+.cr-trash{
+  position:relative;
+
+  width:22px;
+  height:25px;
+
+  flex:0 0 22px;
+
+  display:block;
+
+  color:#fb7185;
+}
+
+.cr-trash-lid{
+  position:absolute;
+
+  left:2px;
+  top:2px;
+
+  width:18px;
+  height:3px;
+
+  border-radius:3px;
+
+  background:currentColor;
+
+  transform-origin:3px 50%;
+
+  transition:
+    transform .28s cubic-bezier(.34,1.56,.64,1);
+}
+
+.cr-trash-lid::before{
+  content:"";
+
+  position:absolute;
+
+  left:6px;
+  top:-4px;
+
+  width:7px;
+  height:3px;
+
+  border:2px solid currentColor;
+  border-bottom:0;
+
+  border-radius:3px 3px 0 0;
+}
+
+.cr-trash-body{
+  position:absolute;
+
+  left:3px;
+  top:8px;
+
+  width:16px;
+  height:16px;
+
+  border:2px solid currentColor;
+  border-top:0;
+
+  border-radius:0 0 4px 4px;
+}
+
+.cr-trash-body span{
+  position:absolute;
+
+  top:3px;
+
+  width:2px;
+  height:8px;
+
+  border-radius:2px;
+
+  background:currentColor;
+
+  opacity:.75;
+}
+
+.cr-trash-body span:first-child{
+  left:4px;
+}
+
+.cr-trash-body span:last-child{
+  right:4px;
+}
+
+.cr-shred-btn.cr-lid-open .cr-trash-lid{
+  transform:
+    translateY(-4px)
+    rotate(-24deg);
+}
+
+
+/* =========================================
+   DELETE LETTERS
+========================================= */
+
+.cr-delete-text{
+  position:relative;
+
+  display:flex;
+  align-items:center;
+
+  white-space:nowrap;
+}
+
+.cr-letter{
+  position:relative;
+
+  display:inline-block;
+
+  will-change:
+    transform,
+    opacity,
+    filter;
+}
+
+.cr-letter.cr-shredding{
+  animation:
+    crLetterShred
+    .55s
+    cubic-bezier(.55,.05,.35,1)
+    forwards;
+}
+
+@keyframes crLetterShred{
+
+  0%{
+    transform:
+      translate(0,0)
+      rotate(0)
+      scale(1);
+
+    opacity:1;
+    filter:blur(0);
+  }
+
+  45%{
+    opacity:1;
+  }
+
+  100%{
+    transform:
+      translate(
+        var(--cr-x),
+        var(--cr-y)
+      )
+      rotate(var(--cr-rotate))
+      scale(.12);
+
+    opacity:0;
+    filter:blur(2px);
+  }
+
+}
+
+
+/* =========================================
+   PARTICLES
+========================================= */
+
+.cr-particle{
+  position:fixed;
+
+  z-index:99999;
+
+  width:3px;
+  height:3px;
+
+  border-radius:50%;
+
+  background:#fb7185;
+
+  pointer-events:none;
+
+  box-shadow:
+    0 0 8px rgba(251,113,133,.8);
+
+  animation:
+    crParticleMove
+    .48s
+    ease-in
+    forwards;
+}
+
+@keyframes crParticleMove{
+
+  0%{
+    transform:
+      translate(0,0)
+      scale(1);
+
+    opacity:1;
+  }
+
+  100%{
+    transform:
+      translate(
+        var(--px),
+        var(--py)
+      )
+      scale(.15);
+
+    opacity:0;
+  }
+
+}
+
+
+/* =========================================
+   COLLAPSED STATE
+========================================= */
+
+.cr-shred-btn.cr-collapsed{
+  min-width:58px;
+  width:58px;
+
+  padding:0;
+
+  gap:0;
+
+  border-radius:50%;
+
+  border-color:rgba(99,102,241,.48);
+
+  background:#0b1220;
+
+  transform:none;
+}
+
+.cr-shred-btn.cr-collapsed .cr-trash,
+.cr-shred-btn.cr-collapsed .cr-delete-text{
+  opacity:0;
+  visibility:hidden;
+}
+
+
+/* =========================================
+   LOADER
+========================================= */
+
+.cr-loader-ring{
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  width:28px;
+  height:28px;
+
+  margin:-14px 0 0 -14px;
+
+  border:3px solid rgba(148,163,184,.18);
+  border-top-color:#22d3ee;
+  border-right-color:#6366f1;
+
+  border-radius:50%;
+
+  opacity:0;
+
+  transform:scale(.6);
+
+  pointer-events:none;
+}
+
+.cr-shred-btn.cr-loading .cr-loader-ring{
+  opacity:1;
+
+  transform:scale(1);
+
+  animation:
+    crLoaderSpin
+    .7s
+    linear
+    infinite;
+
+  box-shadow:
+    0 0 16px rgba(34,211,238,.14);
+}
+
+@keyframes crLoaderSpin{
+
+  to{
+    transform:
+      scale(1)
+      rotate(360deg);
+  }
+
+}
+
+
+/* =========================================
+   SUCCESS
+========================================= */
+
+.cr-success-check{
+  position:absolute;
+
+  left:50%;
+  top:50%;
+
+  opacity:0;
+
+  color:#34d399;
+
+  font-size:25px;
+  font-weight:900;
+  line-height:1;
+
+  transform:
+    translate(-50%,-50%)
+    scale(.3);
+
+  pointer-events:none;
+}
+
+.cr-shred-btn.cr-success-state{
+  border-color:rgba(52,211,153,.55);
+
+  box-shadow:
+    0 0 28px rgba(52,211,153,.15);
+}
+
+.cr-shred-btn.cr-success-state .cr-success-check{
+  animation:
+    crSuccessPop
+    .45s
+    cubic-bezier(.34,1.56,.64,1)
+    forwards;
+}
+
+@keyframes crSuccessPop{
+
+  0%{
+    opacity:0;
+
+    transform:
+      translate(-50%,-50%)
+      scale(.3);
+  }
+
+  100%{
+    opacity:1;
+
+    transform:
+      translate(-50%,-50%)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================
+   COMPLETE / DELETED
+========================================= */
+
+.cr-shred-btn.cr-complete{
+  box-shadow:
+    0 0 30px rgba(52,211,153,.14);
+}
+
+.cr-shred-btn.cr-complete .cr-success-check{
+  opacity:0;
+
+  transition:
+    opacity .25s ease;
+}
+
+.cr-shred-btn.cr-complete .cr-delete-text{
+  opacity:1;
+  visibility:visible;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:600px){
+
+  .cr-shred-demo{
+    min-height:300px;
+    padding:30px 15px;
+  }
+
+  .cr-shred-btn{
+    min-width:175px;
+    height:56px;
+  }
+
+}
