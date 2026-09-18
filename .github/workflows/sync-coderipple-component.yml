@@ -8,11 +8,17 @@ on:
         required: true
         default: "animated-delivery-order-button"
 
+permissions:
+  contents: write
+
 jobs:
-  api-test:
+  sync-component:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: Fetch CodeRipple Component
         run: |
           echo "Fetching component: ${{ inputs.slug }}"
@@ -26,35 +32,171 @@ jobs:
 
           echo "Component API response received successfully."
 
-      - name: Verify Component Data
+      - name: Generate Component Files
         run: |
           python3 - <<'PY'
           import json
+          import os
+          import html
 
           with open("component.json", "r", encoding="utf-8") as f:
               data = json.load(f)
 
-          print("Title:", data.get("title"))
-          print("Slug:", data.get("slug"))
-          print("Categories:", data.get("categories"))
-
+          title = data.get("title", "").strip()
+          slug = data.get("slug", "").strip()
+          url = data.get("url", "").strip()
+          categories = data.get("categories", [])
           code = data.get("component_code", {})
 
-          print("HTML received:", bool(code.get("html")))
-          print("CSS received:", bool(code.get("css")))
-          print("JavaScript received:", bool(code.get("javascript")))
+          html_code = code.get("html", "").strip()
+          css_code = code.get("css", "").strip()
+          js_code = code.get("javascript", "").strip()
 
-          if not data.get("title"):
+          if not title:
               raise SystemExit("Missing component title")
 
-          if not code.get("html"):
+          if not slug:
+              raise SystemExit("Missing component slug")
+
+          if not html_code:
               raise SystemExit("Missing HTML")
 
-          if not code.get("css"):
+          if not css_code:
               raise SystemExit("Missing CSS")
 
-          if not code.get("javascript"):
+          if not js_code:
               raise SystemExit("Missing JavaScript")
 
-          print("CodeRipple component data verified successfully.")
+          category_map = {
+              "CSS Button Effects": "buttons",
+              "Buttons": "buttons",
+              "CSS Card Designs": "cards",
+              "Cards": "cards",
+              "CSS Text Effects": "text-effects",
+              "Text Effects": "text-effects",
+              "CSS Loader Animations": "loaders",
+              "Loaders": "loaders",
+              "CSS Navigation Menus": "navigation",
+              "Navigation": "navigation",
+              "CSS Background Effects": "backgrounds",
+              "Backgrounds": "backgrounds",
+              "CSS Form Designs": "forms",
+              "Forms": "forms",
+              "CSS Cursor Effects": "cursors",
+              "Cursors": "cursors"
+          }
+
+          category = None
+
+          for item in categories:
+              if item in category_map:
+                  category = category_map[item]
+                  break
+
+          if not category:
+              raise SystemExit(
+                  "Unsupported component category: "
+                  + ", ".join(categories)
+              )
+
+          folder = os.path.join(category, slug)
+          os.makedirs(folder, exist_ok=True)
+
+          index_html = f"""<!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>{html.escape(title)} | CodeRipple</title>
+            <link rel="stylesheet" href="style.css">
+          </head>
+          <body>
+
+          {html_code}
+
+            <script src="script.js"></script>
+          </body>
+          </html>
+          """
+
+          with open(
+              os.path.join(folder, "index.html"),
+              "w",
+              encoding="utf-8"
+          ) as f:
+              f.write(index_html)
+
+          with open(
+              os.path.join(folder, "style.css"),
+              "w",
+              encoding="utf-8"
+          ) as f:
+              f.write(css_code + "\n")
+
+          with open(
+              os.path.join(folder, "script.js"),
+              "w",
+              encoding="utf-8"
+          ) as f:
+              f.write(js_code + "\n")
+
+          readme = f"""# {title}
+
+          A ready-to-use CodeRipple web component built with HTML, CSS, and JavaScript.
+
+          ## Technologies Used
+
+          - HTML5
+          - CSS3
+          - JavaScript
+
+          ## Live Tutorial
+
+          View the complete tutorial, live preview, and implementation guide on CodeRipple:
+
+          {url}
+
+          ## Files
+
+          - `index.html`
+          - `style.css`
+          - `script.js`
+
+          ## More Components
+
+          Explore more CodeRipple components:
+
+          https://getcoderipple.com/components/
+
+          ## License
+
+          This component is available under the MIT License.
+          """
+
+          with open(
+              os.path.join(folder, "README.md"),
+              "w",
+              encoding="utf-8"
+          ) as f:
+              f.write(readme)
+
+          print("Component:", title)
+          print("Category:", category)
+          print("Folder:", folder)
+          print("Files generated successfully.")
           PY
+
+      - name: Commit Component Files
+        run: |
+          git config user.name "CodeRipple Bot"
+          git config user.email "actions@github.com"
+
+          git add buttons cards text-effects loaders navigation backgrounds forms cursors
+
+          if git diff --cached --quiet; then
+            echo "No component changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Sync ${{ inputs.slug }} from CodeRipple"
+          git push
