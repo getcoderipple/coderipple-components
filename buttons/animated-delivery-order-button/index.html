@@ -3,83 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Animated Delivery Order Button | CodeRipple</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <div class="cr-order-stage">
+<div class="cr-order-stage">
 
-    <button
-      class="cr-order-btn"
-      id="crOrderBtn"
-      type="button"
+  <button
+    class="cr-order-btn"
+    id="crOrderBtn"
+    type="button"
+  >
+
+    <span class="cr-order-text">
+      Place Order
+    </span>
+
+    <span
+      class="cr-delivery-scene"
+      aria-hidden="true"
     >
 
-      <span class="cr-order-text">
-        Place Order
+      <span class="cr-road">
+        <span></span>
+        <span></span>
+        <span></span>
       </span>
 
-      <span
-        class="cr-delivery-scene"
-        aria-hidden="true"
-      >
+      <span class="cr-truck">
 
-        <span class="cr-road">
-          <span></span>
-          <span></span>
-          <span></span>
+        <span class="cr-truck-box">
+          <span class="cr-package-line"></span>
         </span>
 
-        <span class="cr-truck">
-
-          <span class="cr-truck-box">
-            <span class="cr-package-line"></span>
-          </span>
-
-          <span class="cr-truck-cab">
-            <span class="cr-window"></span>
-          </span>
-
-          <span
-            class="cr-wheel cr-wheel-one"
-          ></span>
-
-          <span
-            class="cr-wheel cr-wheel-two"
-          ></span>
-
+        <span class="cr-truck-cab">
+          <span class="cr-window"></span>
         </span>
+
+        <span
+          class="cr-wheel cr-wheel-one"
+        ></span>
+
+        <span
+          class="cr-wheel cr-wheel-two"
+        ></span>
 
       </span>
 
-      <span
-        class="cr-order-success"
-        aria-hidden="true"
-      >
+    </span>
 
-        <span class="cr-check">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M5 12.5l4.2 4.2L19 7"
-            ></path>
-          </svg>
-        </span>
+    <span
+      class="cr-order-success"
+      aria-hidden="true"
+    >
 
-        <span class="cr-success-text">
-          Order Placed
-        </span>
-
+      <span class="cr-check">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M5 12.5l4.2 4.2L19 7"
+          ></path>
+        </svg>
       </span>
 
-    </button>
+      <span class="cr-success-text">
+        Order Placed
+      </span>
 
-  </div>
+    </span>
+
+  </button>
+
+</div>
 
   <script src="script.js"></script>
-
 </body>
 </html>
