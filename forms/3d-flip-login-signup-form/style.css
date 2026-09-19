@@ -1,0 +1,692 @@
+.cr-authflip {
+  --cr-af-bg: #070912;
+  --cr-af-panel: rgba(14, 17, 32, 0.78);
+  --cr-af-border: rgba(255, 255, 255, 0.11);
+  --cr-af-text: #f7f8ff;
+  --cr-af-muted: #9298ad;
+  --cr-af-accent: #65e8ff;
+  --cr-af-accent-2: #8c67ff;
+
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 720px;
+  padding: 48px 20px;
+  overflow: hidden;
+  border-radius: 28px;
+  background:
+    radial-gradient(
+      circle at 18% 20%,
+      rgba(101, 232, 255, 0.12),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 82% 75%,
+      rgba(140, 103, 255, 0.16),
+      transparent 32%
+    ),
+    linear-gradient(145deg, #05060b 0%, #090b16 50%, #060711 100%);
+  color: var(--cr-af-text);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+.cr-authflip *,
+.cr-authflip *::before,
+.cr-authflip *::after {
+  box-sizing: border-box;
+}
+
+.cr-authflip__glow {
+  position: absolute;
+  z-index: -1;
+  width: 340px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  filter: blur(25px);
+  pointer-events: none;
+}
+
+.cr-authflip__glow--one {
+  top: -120px;
+  left: -90px;
+  background: rgba(70, 222, 255, 0.1);
+}
+
+.cr-authflip__glow--two {
+  right: -110px;
+  bottom: -140px;
+  background: rgba(126, 82, 255, 0.13);
+}
+
+.cr-authflip__scene {
+  position: relative;
+  width: min(100%, 430px);
+  perspective: 1500px;
+}
+
+.cr-authflip__card {
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.82s cubic-bezier(0.68, -0.2, 0.2, 1.18),
+    filter 0.4s ease;
+  will-change: transform;
+}
+
+.cr-authflip__card.is-signup {
+  transform: rotateY(180deg);
+}
+
+.cr-authflip__face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 34px;
+  overflow: hidden;
+  border: 1px solid var(--cr-af-border);
+  border-radius: 28px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.075),
+      rgba(255, 255, 255, 0.018)
+    ),
+    var(--cr-af-panel);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.cr-authflip__face::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: 10%;
+  width: 80%;
+  height: 170px;
+  border-radius: 50%;
+  background: rgba(101, 232, 255, 0.12);
+  filter: blur(55px);
+  pointer-events: none;
+}
+
+.cr-authflip__face--signup {
+  transform: rotateY(180deg);
+}
+
+.cr-authflip__face--signup::before {
+  background: rgba(140, 103, 255, 0.15);
+}
+
+.cr-authflip__brand {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 34px;
+  margin-bottom: 28px;
+}
+
+.cr-authflip__brand-mark {
+  position: relative;
+  display: block;
+  width: 27px;
+  height: 27px;
+  transform: rotate(45deg);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(101, 232, 255, 0.95),
+      rgba(140, 103, 255, 0.9)
+    );
+  box-shadow:
+    0 0 25px rgba(101, 232, 255, 0.22),
+    0 0 35px rgba(140, 103, 255, 0.15);
+}
+
+.cr-authflip__brand-mark::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 2px solid rgba(8, 10, 20, 0.75);
+  border-radius: 4px;
+}
+
+.cr-authflip__heading {
+  position: relative;
+  margin-bottom: 27px;
+}
+
+.cr-authflip__eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--cr-af-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.cr-authflip__face--signup .cr-authflip__eyebrow {
+  color: #ae98ff;
+}
+
+.cr-authflip__heading h2 {
+  margin: 0;
+  color: var(--cr-af-text);
+  font-size: clamp(2rem, 6vw, 2.65rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+
+.cr-authflip__heading p {
+  margin: 10px 0 0;
+  color: var(--cr-af-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.cr-authflip__form {
+  display: grid;
+  gap: 17px;
+}
+
+.cr-authflip__field {
+  display: grid;
+  gap: 8px;
+  color: #c6cada;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.cr-authflip__field > input,
+.cr-authflip__password {
+  width: 100%;
+}
+
+.cr-authflip__field input {
+  min-width: 0;
+  height: 48px;
+  margin: 0;
+  padding: 0 15px;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: rgba(5, 7, 16, 0.65);
+  box-shadow: none;
+  color: var(--cr-af-text);
+  font: inherit;
+  font-size: 0.9rem;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.cr-authflip__field input::placeholder {
+  color: #646a7e;
+  opacity: 1;
+}
+
+.cr-authflip__field input:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.cr-authflip__field input:focus {
+  border-color: rgba(101, 232, 255, 0.65);
+  background: rgba(7, 10, 21, 0.85);
+  box-shadow: 0 0 0 3px rgba(101, 232, 255, 0.09);
+}
+
+.cr-authflip__face--signup .cr-authflip__field input:focus {
+  border-color: rgba(174, 152, 255, 0.7);
+  box-shadow: 0 0 0 3px rgba(140, 103, 255, 0.11);
+}
+
+.cr-authflip__password {
+  position: relative;
+  display: block;
+}
+
+.cr-authflip__password input {
+  width: 100%;
+  padding-right: 50px;
+}
+
+.cr-authflip__password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  box-shadow: none;
+  color: #747b91;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.cr-authflip__password-toggle:hover,
+.cr-authflip__password-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--cr-af-text);
+}
+
+.cr-authflip__options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.cr-authflip__remember,
+.cr-authflip__terms {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cr-af-muted);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.cr-authflip__remember input,
+.cr-authflip__terms input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: var(--cr-af-accent);
+}
+
+.cr-authflip__terms {
+  align-items: flex-start;
+}
+
+.cr-authflip__terms input {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+.cr-authflip__link {
+  color: #b7bdcf;
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.cr-authflip__link:hover {
+  color: var(--cr-af-accent);
+}
+
+.cr-authflip__primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 49px;
+  margin: 2px 0 0;
+  padding: 0 20px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 13px;
+  background: linear-gradient(
+    110deg,
+    var(--cr-af-accent),
+    #80baff 48%,
+    var(--cr-af-accent-2)
+  );
+  box-shadow:
+    0 10px 28px rgba(83, 190, 255, 0.17),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  color: #080a13;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 750;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.cr-authflip__primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow:
+    0 14px 34px rgba(83, 190, 255, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.cr-authflip__primary:active {
+  transform: translateY(0);
+}
+
+.cr-authflip__primary span:last-child {
+  font-size: 1.15rem;
+  transition: transform 0.25s ease;
+}
+
+.cr-authflip__primary:hover span:last-child {
+  transform: translateX(3px);
+}
+
+.cr-authflip__divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 21px 0 16px;
+  color: #686f84;
+  font-size: 0.7rem;
+  white-space: nowrap;
+}
+
+.cr-authflip__divider::before,
+.cr-authflip__divider::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cr-authflip__socials {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px;
+}
+
+.cr-authflip__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: none;
+  color: #d8dbe7;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background-color 0.22s ease;
+}
+
+.cr-authflip__social:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.17);
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.cr-authflip__social > span:first-child {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-size: 0.68rem;
+}
+
+.cr-authflip__switch-text {
+  margin: auto 0 0;
+  padding-top: 22px;
+  color: var(--cr-af-muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.cr-authflip__switch {
+  margin: 0;
+  padding: 3px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--cr-af-accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.cr-authflip__switch:hover {
+  color: #b5f5ff;
+  text-shadow: 0 0 14px rgba(101, 232, 255, 0.35);
+}
+
+.cr-authflip__face--signup .cr-authflip__switch {
+  color: #ae98ff;
+}
+
+.cr-authflip__face--signup .cr-authflip__switch:hover {
+  color: #c9bcff;
+  text-shadow: 0 0 14px rgba(140, 103, 255, 0.4);
+}
+
+.cr-authflip button:focus-visible,
+.cr-authflip a:focus-visible,
+.cr-authflip input:focus-visible {
+  outline: 2px solid rgba(101, 232, 255, 0.9);
+  outline-offset: 3px;
+}
+
+/* Registration side needs slightly more vertical room */
+.cr-authflip__face--signup {
+  min-height: 620px;
+}
+
+/* Tablet */
+@media (max-width: 700px) {
+  .cr-authflip {
+    min-height: 680px;
+    padding: 30px 16px;
+    border-radius: 22px;
+  }
+
+  .cr-authflip__scene {
+    width: min(100%, 410px);
+    perspective: 1200px;
+  }
+
+  .cr-authflip__card {
+    min-height: 610px;
+  }
+
+  .cr-authflip__face {
+    padding: 29px;
+    border-radius: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .cr-authflip {
+    min-height: 650px;
+    padding: 20px 12px;
+    border-radius: 18px;
+  }
+
+  .cr-authflip__scene {
+    perspective: 950px;
+  }
+
+  .cr-authflip__card {
+    min-height: 600px;
+  }
+
+  .cr-authflip__face {
+    padding: 25px 20px;
+    border-radius: 21px;
+  }
+
+  .cr-authflip__brand {
+    margin-bottom: 23px;
+  }
+
+  .cr-authflip__heading {
+    margin-bottom: 23px;
+  }
+
+  .cr-authflip__heading h2 {
+    font-size: 2rem;
+  }
+
+  .cr-authflip__options {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .cr-authflip__socials {
+    gap: 8px;
+  }
+
+  .cr-authflip__social {
+    padding-inline: 10px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .cr-authflip__card,
+  .cr-authflip__primary,
+  .cr-authflip__primary span,
+  .cr-authflip__social,
+  .cr-authflip__switch,
+  .cr-authflip__field input {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== Card size / crop fix ===== */
+
+.cr-authflip {
+  min-height: 620px;
+  padding: 30px 20px;
+}
+
+.cr-authflip__scene {
+  width: min(100%, 390px);
+}
+
+.cr-authflip__card {
+  min-height: 570px;
+}
+
+.cr-authflip__face {
+  padding: 26px 30px;
+}
+
+.cr-authflip__brand {
+  margin-bottom: 20px;
+}
+
+.cr-authflip__heading {
+  margin-bottom: 20px;
+}
+
+.cr-authflip__heading h2 {
+  font-size: 2.25rem;
+}
+
+.cr-authflip__heading p {
+  margin-top: 7px;
+}
+
+.cr-authflip__form {
+  gap: 13px;
+}
+
+.cr-authflip__field {
+  gap: 6px;
+}
+
+.cr-authflip__field input {
+  height: 44px;
+}
+
+.cr-authflip__primary {
+  min-height: 45px;
+}
+
+.cr-authflip__divider {
+  margin: 16px 0 13px;
+}
+
+.cr-authflip__social {
+  min-height: 41px;
+}
+
+.cr-authflip__switch-text {
+  padding-top: 16px;
+}
+
+/* Signup side */
+.cr-authflip__face--signup {
+  min-height: 570px;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .cr-authflip {
+    min-height: 590px;
+    padding: 18px 12px;
+  }
+
+  .cr-authflip__scene {
+    width: min(100%, 360px);
+  }
+
+  .cr-authflip__card {
+    min-height: 555px;
+  }
+
+  .cr-authflip__face,
+  .cr-authflip__face--signup {
+    min-height: 555px;
+    padding: 23px 20px;
+  }
+
+  .cr-authflip__heading h2 {
+    font-size: 1.9rem;
+  }
+}
