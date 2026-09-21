@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Secure Checkout | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cr-checkout" data-cr-checkout>
+  <div class="cr-checkout__card">
+
+    <div class="cr-checkout__header">
+
+      <div class="cr-checkout__brand">
+
+        <span class="cr-checkout__brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2 4.5 5.2v5.1c0 5.1 3.1 9.7 7.5 11.7 4.4-2 7.5-6.6 7.5-11.7V5.2L12 2Z"></path>
+            <path d="m8.8 12 2.1 2.1 4.5-4.6"></path>
+          </svg>
+        </span>
+
+        <div>
+          <span class="cr-checkout__eyebrow">
+            SECURE CHECKOUT
+          </span>
+          <h2>Complete Payment</h2>
+        </div>
+
+      </div>
+
+      <div class="cr-checkout__secure">
+        <span class="cr-checkout__secure-dot"></span>
+        Encrypted
+      </div>
+
+    </div>
+
+
+    <div class="cr-checkout__summary">
+
+      <div>
+        <span class="cr-checkout__summary-label">
+          Order total
+        </span>
+        <strong>$49.00</strong>
+      </div>
+
+      <span class="cr-checkout__summary-note">
+        USD
+      </span>
+
+    </div>
+
+
+    <fieldset class="cr-checkout__methods">
+
+      <legend>Payment method</legend>
+
+      <div class="cr-checkout__method-grid">
+
+        <label class="cr-checkout__method is-active">
+
+          <input
+            type="radio"
+            name="cr-payment-method"
+            value="card"
+            checked
+          >
+
+          <span class="cr-checkout__method-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect
+                x="2.5"
+                y="5"
+                width="19"
+                height="14"
+                rx="2.5"
+              ></rect>
+              <path d="M2.5 9.5h19"></path>
+              <path d="M6 15h4"></path>
+            </svg>
+          </span>
+
+          <span class="cr-checkout__method-text">
+            <strong>Card</strong>
+            <small>Visa, Mastercard</small>
+          </span>
+
+          <span class="cr-checkout__radio-dot"></span>
+
+        </label>
+
+
+        <label class="cr-checkout__method">
+
+          <input
+            type="radio"
+            name="cr-payment-method"
+            value="wallet"
+          >
+
+          <span class="cr-checkout__method-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 6.5h14a2 2 0 0 1 2 2v9H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h12"></path>
+              <path d="M16 11h6v4h-6a2 2 0 1 1 0-4Z"></path>
+            </svg>
+          </span>
+
+          <span class="cr-checkout__method-text">
+            <strong>Wallet</strong>
+            <small>Quick payment</small>
+          </span>
+
+          <span class="cr-checkout__radio-dot"></span>
+
+        </label>
+
+      </div>
+
+    </fieldset>
+
+
+    <div class="cr-checkout__card-panel">
+
+      <div class="cr-checkout__field">
+
+        <label for="cr-card-name">
+          Cardholder name
+        </label>
+
+        <div class="cr-checkout__input-wrap">
+          <input
+            id="cr-card-name"
+            type="text"
+            autocomplete="cc-name"
+            placeholder="Alex Morgan"
+          >
+        </div>
+
+        <span class="cr-checkout__error">
+          Enter the cardholder name.
+        </span>
+
+      </div>
+
+
+      <div class="cr-checkout__field">
+
+        <label for="cr-card-number">
+          Card number
+        </label>
+
+        <div class="cr-checkout__input-wrap">
+
+          <input
+            id="cr-card-number"
+            type="text"
+            inputmode="numeric"
+            autocomplete="cc-number"
+            maxlength="19"
+            placeholder="4242 4242 4242 4242"
+          >
+
+          <span class="cr-checkout__card-mark" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+
+        </div>
+
+        <span class="cr-checkout__error">
+          Enter a valid card number.
+        </span>
+
+      </div>
+
+
+      <div class="cr-checkout__row">
+
+        <div class="cr-checkout__field">
+
+          <label for="cr-card-expiry">
+            Expiry
+          </label>
+
+          <div class="cr-checkout__input-wrap">
+            <input
+              id="cr-card-expiry"
+              type="text"
+              inputmode="numeric"
+              autocomplete="cc-exp"
+              maxlength="5"
+              placeholder="MM/YY"
+            >
+          </div>
+
+          <span class="cr-checkout__error">
+            Check expiry date.
+          </span>
+
+        </div>
+
+
+        <div class="cr-checkout__field">
+
+          <label for="cr-card-cvc">
+            CVC
+          </label>
+
+          <div class="cr-checkout__input-wrap">
+
+            <input
+              id="cr-card-cvc"
+              type="password"
+              inputmode="numeric"
+              autocomplete="cc-csc"
+              maxlength="4"
+              placeholder="•••"
+            >
+
+            <span
+              class="cr-checkout__help"
+              title="3 or 4 digit security code"
+            >
+              ?
+            </span>
+
+          </div>
+
+          <span class="cr-checkout__error">
+            Enter a valid CVC.
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="cr-checkout__wallet"
+      aria-hidden="true"
+    >
+
+      <div class="cr-checkout__wallet-icon">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 6.5h14a2 2 0 0 1 2 2v9H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h12"></path>
+          <path d="M16 11h6v4h-6a2 2 0 1 1 0-4Z"></path>
+        </svg>
+
+      </div>
+
+      <div class="cr-checkout__wallet-content">
+
+        <span class="cr-checkout__wallet-label">
+          DIGITAL WALLET
+        </span>
+
+        <h3>Quick Wallet Payment</h3>
+
+        <p>
+          Continue securely using your connected digital wallet.
+          No card details are required.
+        </p>
+
+        <div class="cr-checkout__wallet-account">
+
+          <span class="cr-checkout__wallet-status">
+            <span></span>
+            Wallet ready
+          </span>
+
+          <strong>$49.00</strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="cr-checkout__form">
+
+      <button
+        class="cr-checkout__submit"
+        type="button"
+      >
+
+        <span class="cr-checkout__submit-default">
+
+          <span class="cr-checkout__pay-text">
+            Pay $49.00
+          </span>
+
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14"></path>
+            <path d="m14 7 5 5-5 5"></path>
+          </svg>
+
+        </span>
+
+        <span class="cr-checkout__submit-loading">
+          <span class="cr-checkout__spinner"></span>
+          Processing payment...
+        </span>
+
+      </button>
+
+
+      <div class="cr-checkout__trust">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect
+            x="5"
+            y="10"
+            width="14"
+            height="10"
+            rx="2"
+          ></rect>
+          <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+        </svg>
+
+        <span>
+          Your payment information is encrypted and secure.
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="cr-checkout__success"
+      aria-live="polite"
+    >
+
+      <div class="cr-checkout__success-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6.5 12.5 3.5 3.5 7.5-8"></path>
+        </svg>
+      </div>
+
+      <span class="cr-checkout__success-label">
+        PAYMENT COMPLETE
+      </span>
+
+      <h3>Securely Processed!</h3>
+
+      <p>
+        Your demo payment has been successfully processed.
+      </p>
+
+      <div class="cr-checkout__success-amount">
+        <span>Amount paid</span>
+        <strong>$49.00</strong>
+      </div>
+
+      <button
+        class="cr-checkout__reset"
+        type="button"
+      >
+        Try Again
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
