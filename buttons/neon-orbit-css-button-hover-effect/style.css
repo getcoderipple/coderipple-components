@@ -1,0 +1,286 @@
+/* =========================================
+   CODERIPPLE NEON ORBIT BUTTON
+========================================= */
+
+.cr-neon-orbit-demo {
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(91, 33, 182, 0.08),
+      transparent 38%
+    ),
+    #080b14;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.cr-neon-orbit-btn {
+  position: relative;
+
+  width: 230px;
+  height: 64px;
+
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+
+  background: transparent;
+
+  font-family: inherit;
+  cursor: pointer;
+
+  isolation: isolate;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* =========================================
+   NEON TRACK
+========================================= */
+
+.cr-neon-orbit-btn__track {
+  position: absolute;
+
+  inset: -3px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  background: #151822;
+
+  box-shadow:
+    0 0 0 rgba(34, 211, 238, 0),
+    0 0 0 rgba(168, 85, 247, 0);
+
+  transition:
+    opacity 0.3s ease,
+    box-shadow 0.3s ease;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   ROTATING LIGHT SOURCE
+========================================= */
+
+.cr-neon-orbit-btn__runner {
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  top: 50%;
+  left: 50%;
+
+  margin-top: -160px;
+  margin-left: -160px;
+
+  background: conic-gradient(
+    from 0deg,
+
+    transparent 0deg,
+    transparent 255deg,
+
+    #22d3ee 280deg,
+    #38bdf8 295deg,
+    #8b5cf6 315deg,
+    #d946ef 332deg,
+
+    transparent 350deg,
+    transparent 360deg
+  );
+
+  animation:
+    cr-neon-orbit-spin 2.2s linear infinite;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   BUTTON FACE
+========================================= */
+
+.cr-neon-orbit-btn__face {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  border-radius: 999px;
+
+  background: #f5f2ea;
+
+  box-shadow:
+    0 10px 28px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+  transition:
+    inset 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.cr-neon-orbit-btn__content {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  color: #090a0d;
+
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+
+  transition: color 0.3s ease;
+
+  pointer-events: none;
+}
+
+
+.cr-neon-orbit-btn__label {
+  white-space: nowrap;
+}
+
+
+.cr-neon-orbit-btn__arrow {
+  display: inline-block;
+
+  font-size: 23px;
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* =========================================
+   HOVER STATE
+========================================= */
+
+.cr-neon-orbit-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+.cr-neon-orbit-btn:hover
+.cr-neon-orbit-btn__track {
+  opacity: 1;
+
+  box-shadow:
+    0 0 12px rgba(34, 211, 238, 0.35),
+    0 0 22px rgba(139, 92, 246, 0.28),
+    0 0 32px rgba(217, 70, 239, 0.18);
+}
+
+
+.cr-neon-orbit-btn:hover
+.cr-neon-orbit-btn__face {
+  inset: 3px;
+
+  background: #05070c;
+
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.035),
+    0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+.cr-neon-orbit-btn:hover
+.cr-neon-orbit-btn__content {
+  color: #ffffff;
+}
+
+
+.cr-neon-orbit-btn:hover
+.cr-neon-orbit-btn__arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================
+   ROTATION
+========================================= */
+
+@keyframes cr-neon-orbit-spin {
+
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+/* =========================================
+   ACTIVE
+========================================= */
+
+.cr-neon-orbit-btn:active {
+  transform:
+    translateY(0)
+    scale(0.98);
+}
+
+
+/* =========================================
+   KEYBOARD FOCUS
+========================================= */
+
+.cr-neon-orbit-btn:focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 7px;
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .cr-neon-orbit-btn,
+  .cr-neon-orbit-btn__face,
+  .cr-neon-orbit-btn__content,
+  .cr-neon-orbit-btn__arrow {
+    transition: none;
+  }
+
+  .cr-neon-orbit-btn__runner {
+    animation: none;
+  }
+
+}
