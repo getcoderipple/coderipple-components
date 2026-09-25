@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glass Contact Form | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cr-popup-contact">
+
+  <button
+    class="cr-popup-contact__trigger"
+    type="button"
+    aria-expanded="false"
+  >
+    <span>Contact Us</span>
+    <span
+      class="cr-popup-contact__arrow"
+      aria-hidden="true"
+    >↗</span>
+  </button>
+
+  <div
+    class="cr-popup-contact__panel"
+    aria-hidden="true"
+  >
+
+    <div
+      class="cr-popup-contact__card"
+      role="dialog"
+      aria-labelledby="cr-popup-title"
+    >
+
+      <span
+        class="cr-popup-contact__glow cr-popup-contact__glow--purple"
+        aria-hidden="true"
+      ></span>
+
+      <span
+        class="cr-popup-contact__glow cr-popup-contact__glow--cyan"
+        aria-hidden="true"
+      ></span>
+
+      <button
+        class="cr-popup-contact__close"
+        type="button"
+        aria-label="Close contact form"
+      >
+        ×
+      </button>
+
+      <div class="cr-popup-contact__content">
+
+        <span class="cr-popup-contact__eyebrow">
+          GET IN TOUCH
+        </span>
+
+        <h2 id="cr-popup-title">
+          Let's start a conversation
+        </h2>
+
+        <p class="cr-popup-contact__intro">
+          Have a question or an idea? Send us a message and
+          we'll get back to you.
+        </p>
+
+        <form class="cr-popup-contact__form">
+
+          <div class="cr-popup-contact__field">
+
+            <input
+              id="cr-popup-name"
+              type="text"
+              name="name"
+              placeholder=" "
+              autocomplete="name"
+              required
+            >
+
+            <label for="cr-popup-name">
+              Your name
+            </label>
+
+          </div>
+
+          <div class="cr-popup-contact__field">
+
+            <input
+              id="cr-popup-email"
+              type="email"
+              name="email"
+              placeholder=" "
+              autocomplete="email"
+              required
+            >
+
+            <label for="cr-popup-email">
+              Email address
+            </label>
+
+          </div>
+
+          <div class="cr-popup-contact__field">
+
+            <textarea
+              id="cr-popup-message"
+              name="message"
+              rows="3"
+              placeholder=" "
+              required
+            ></textarea>
+
+            <label for="cr-popup-message">
+              Your message
+            </label>
+
+          </div>
+
+          <button
+            class="cr-popup-contact__submit"
+            type="submit"
+          >
+            <span>Send Message</span>
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <div
+            class="cr-popup-contact__success"
+            role="status"
+            aria-live="polite"
+          >
+
+            <span class="cr-popup-contact__check">
+              ✓
+            </span>
+
+            <div>
+              <strong>Message sent!</strong>
+              <p>Thanks for reaching out.</p>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
