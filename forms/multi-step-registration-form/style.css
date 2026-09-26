@@ -1,0 +1,1431 @@
+/* =====================================================
+       CODERIPPLE MULTI-STEP REGISTRATION FORM
+       CLEAN PLAYGROUND CSS
+    ===================================================== */
+
+    .cr-step-form,
+    .cr-step-form * {
+      box-sizing: border-box;
+    }
+
+    .cr-step-form {
+      --cr-bg: #070a14;
+      --cr-panel: #101426;
+      --cr-field: #080c19;
+
+      --cr-border: rgba(255, 255, 255, 0.09);
+      --cr-border-soft: rgba(255, 255, 255, 0.06);
+
+      --cr-text: #f5f7ff;
+      --cr-muted: #858da9;
+
+      --cr-purple: #8658ff;
+      --cr-cyan: #28d7ff;
+      --cr-green: #3de3a0;
+      --cr-danger: #ff6680;
+
+      width: 100%;
+      height: auto;
+
+      padding: 24px;
+
+      position: relative;
+
+      font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--cr-text);
+
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(134, 88, 255, 0.16),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 90%,
+          rgba(40, 215, 255, 0.1),
+          transparent 30%
+        ),
+        var(--cr-bg);
+    }
+
+
+    /* =====================================================
+       MAIN CARD
+    ===================================================== */
+
+    .cr-step-form__card {
+      width: 100%;
+      max-width: 1180px;
+      height: auto;
+
+      margin: 0 auto;
+
+      padding: 28px 36px 26px;
+
+      position: relative;
+
+      border: 1px solid var(--cr-border);
+      border-radius: 24px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(18, 22, 43, 0.97),
+          rgba(9, 12, 25, 0.98)
+        );
+
+      box-shadow:
+        0 24px 65px rgba(0, 0, 0, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    }
+
+
+    /* top glow line */
+
+    .cr-step-form__card::before {
+      content: "";
+
+      position: absolute;
+      top: -1px;
+      left: 15%;
+
+      width: 70%;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--cr-purple),
+          var(--cr-cyan),
+          transparent
+        );
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .cr-step-form__header {
+      margin-bottom: 22px;
+
+      text-align: center;
+    }
+
+    .cr-step-form__eyebrow {
+      display: inline-block;
+
+      margin-bottom: 7px;
+
+      color: var(--cr-cyan);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+    }
+
+    .cr-step-form__header h2 {
+      margin: 0;
+
+      font-size: 29px;
+      line-height: 1.15;
+      font-weight: 800;
+
+      letter-spacing: -0.04em;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff,
+          #c9c3ff 55%,
+          #72e8ff
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .cr-step-form__header p {
+      margin: 6px 0 0;
+
+      color: var(--cr-muted);
+
+      font-size: 11px;
+      line-height: 1.55;
+    }
+
+
+    /* =====================================================
+       PROGRESS BAR
+    ===================================================== */
+
+    .cr-step-form__progress {
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+
+      padding: 13px 17px;
+      margin-bottom: 22px;
+
+      border: 1px solid var(--cr-border-soft);
+      border-radius: 15px;
+
+      background: rgba(4, 7, 17, 0.38);
+    }
+
+    .cr-step {
+      display: flex;
+      align-items: center;
+
+      gap: 9px;
+
+      flex-shrink: 0;
+
+      opacity: 0.45;
+
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+    }
+
+    .cr-step--active,
+    .cr-step--complete {
+      opacity: 1;
+    }
+
+    .cr-step--active {
+      transform: translateY(-1px);
+    }
+
+    .cr-step__circle {
+      width: 34px;
+      height: 34px;
+
+      display: grid;
+      place-items: center;
+
+      flex: 0 0 34px;
+
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 50%;
+
+      color: #8991ad;
+
+      background: rgba(255, 255, 255, 0.035);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      transition: 0.3s ease;
+    }
+
+    .cr-step--active .cr-step__circle {
+      color: #ffffff;
+
+      border-color: rgba(40, 215, 255, 0.5);
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--cr-purple),
+          #665cff 55%,
+          var(--cr-cyan)
+        );
+
+      box-shadow:
+        0 0 0 4px rgba(134, 88, 255, 0.08),
+        0 0 20px rgba(40, 215, 255, 0.16);
+    }
+
+    .cr-step--complete .cr-step__circle {
+      color: #06130e;
+
+      border-color: transparent;
+
+      background: var(--cr-green);
+    }
+
+    .cr-step__text {
+      display: flex;
+      flex-direction: column;
+
+      gap: 1px;
+    }
+
+    .cr-step__text strong {
+      color: #f5f6ff;
+
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .cr-step__text small {
+      color: #707994;
+
+      font-size: 8px;
+
+      white-space: nowrap;
+    }
+
+    .cr-step__line {
+      height: 1px;
+
+      flex: 1;
+
+      min-width: 40px;
+
+      margin: 0 18px;
+
+      position: relative;
+      overflow: hidden;
+
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .cr-step__line span {
+      position: absolute;
+      inset: 0;
+
+      transform: scaleX(0);
+      transform-origin: left;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--cr-purple),
+          var(--cr-cyan)
+        );
+
+      transition: transform 0.4s ease;
+    }
+
+    .cr-step__line--complete span {
+      transform: scaleX(1);
+    }
+
+
+    /* =====================================================
+       FORM STEPS
+    ===================================================== */
+
+    .cr-form-step {
+      display: none;
+
+      animation: crStepEnter 0.3s ease;
+    }
+
+    .cr-form-step--active {
+      display: block;
+    }
+
+    @keyframes crStepEnter {
+      from {
+        opacity: 0;
+        transform: translateY(7px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+
+    /* =====================================================
+       STEP 1 WIDE LAYOUT
+    ===================================================== */
+
+    .cr-form-step[data-step="1"].cr-form-step--active {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+      column-gap: 22px;
+    }
+
+    .cr-form-step[data-step="1"] .cr-form-step__heading {
+      grid-column: 1 / -1;
+    }
+
+    .cr-form-step[data-step="1"] .cr-field:first-of-type {
+      grid-column: 1 / -1;
+    }
+
+    .cr-form-step[data-step="1"] .cr-field:nth-of-type(2) {
+      grid-column: 1;
+    }
+
+    .cr-form-step[data-step="1"] .cr-field:nth-of-type(3) {
+      grid-column: 2;
+    }
+
+
+    /* =====================================================
+       STEP 2 WIDE LAYOUT
+    ===================================================== */
+
+    .cr-form-step[data-step="2"].cr-form-step--active {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+      column-gap: 22px;
+    }
+
+    .cr-form-step[data-step="2"] .cr-form-step__heading {
+      grid-column: 1 / -1;
+    }
+
+    .cr-form-step[data-step="2"] .cr-field-row {
+      grid-column: 1 / -1;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+      gap: 22px;
+    }
+
+    .cr-form-step[data-step="2"] > .cr-field:nth-of-type(1) {
+      grid-column: 1;
+    }
+
+    .cr-form-step[data-step="2"] > .cr-field:nth-of-type(2) {
+      grid-column: 2;
+    }
+
+    .cr-form-step[data-step="2"] > .cr-field:nth-of-type(3) {
+      grid-column: 1 / -1;
+    }
+
+
+    /* =====================================================
+       STEP HEADING
+    ===================================================== */
+
+    .cr-form-step__heading {
+      display: flex;
+      align-items: center;
+
+      gap: 12px;
+
+      padding-bottom: 15px;
+      margin-bottom: 17px;
+
+      border-bottom: 1px solid var(--cr-border-soft);
+    }
+
+    .cr-form-step__number {
+      width: 39px;
+      height: 39px;
+
+      display: grid;
+      place-items: center;
+
+      flex: 0 0 39px;
+
+      border: 1px solid rgba(134, 88, 255, 0.28);
+      border-radius: 11px;
+
+      color: var(--cr-cyan);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(134, 88, 255, 0.14),
+          rgba(40, 215, 255, 0.05)
+        );
+
+      font-size: 9px;
+      font-weight: 900;
+
+      letter-spacing: 0.07em;
+    }
+
+    .cr-form-step__heading h3 {
+      margin: 0 0 3px;
+
+      color: #f7f8ff;
+
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .cr-form-step__heading p {
+      margin: 0;
+
+      color: var(--cr-muted);
+
+      font-size: 9px;
+      line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       FIELDS
+    ===================================================== */
+
+    .cr-field {
+      min-width: 0;
+
+      margin-bottom: 12px;
+    }
+
+    .cr-field label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      margin-bottom: 5px;
+
+      color: #dce0f1;
+
+      font-size: 10px;
+      font-weight: 650;
+    }
+
+    .cr-label-optional {
+      color: #69728d;
+
+      font-size: 8px;
+      font-weight: 500;
+    }
+
+
+    /* =====================================================
+       INPUT WRAPPER
+    ===================================================== */
+
+    .cr-input-wrap {
+      width: 100%;
+      height: 44px;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 11px;
+
+      background: rgba(4, 7, 17, 0.6);
+
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .cr-input-wrap:hover {
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+
+    .cr-input-wrap:focus-within {
+      border-color: rgba(40, 215, 255, 0.48);
+
+      background: rgba(5, 8, 20, 0.82);
+
+      box-shadow:
+        0 0 0 3px rgba(40, 215, 255, 0.04);
+    }
+
+    .cr-input-icon {
+      width: 41px;
+
+      display: grid;
+      place-items: center;
+
+      flex: 0 0 41px;
+
+      color: #707996;
+
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .cr-input-icon svg {
+      width: 15px;
+      height: 15px;
+
+      fill: none;
+
+      stroke: currentColor;
+      stroke-width: 1.7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cr-input-wrap input {
+      width: 100%;
+      height: 100%;
+
+      min-width: 0;
+
+      padding: 0 42px 0 0;
+
+      border: 0;
+      outline: 0;
+
+      color: #f6f7ff;
+      background: transparent;
+
+      font: inherit;
+      font-size: 10px;
+    }
+
+    .cr-input-wrap input::placeholder,
+    .cr-field textarea::placeholder {
+      color: #606984;
+    }
+
+
+    /* =====================================================
+       PASSWORD BUTTON
+    ===================================================== */
+
+    .cr-password-toggle {
+      width: 36px;
+      height: 36px;
+
+      display: grid;
+      place-items: center;
+
+      position: absolute;
+
+      top: 50%;
+      right: 4px;
+
+      transform: translateY(-50%);
+
+      padding: 0;
+
+      border: 0;
+      border-radius: 8px;
+
+      color: #727c99;
+      background: transparent;
+
+      cursor: pointer;
+    }
+
+    .cr-password-toggle:hover {
+      color: var(--cr-cyan);
+
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .cr-eye-icon {
+      width: 16px;
+      height: 16px;
+
+      fill: none;
+
+      stroke: currentColor;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+
+    /* =====================================================
+       PASSWORD STRENGTH
+    ===================================================== */
+
+    .cr-password-strength {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 4px;
+
+      margin-top: 6px;
+    }
+
+    .cr-password-strength span {
+      height: 3px;
+
+      border-radius: 20px;
+
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .cr-password-strength[data-strength="1"] span:nth-child(1) {
+      background: var(--cr-danger);
+    }
+
+    .cr-password-strength[data-strength="2"] span:nth-child(-n + 2) {
+      background: #ffb74d;
+    }
+
+    .cr-password-strength[data-strength="3"] span:nth-child(-n + 3) {
+      background: var(--cr-cyan);
+    }
+
+    .cr-password-strength[data-strength="4"] span {
+      background: var(--cr-green);
+    }
+
+    .cr-password-meta {
+      display: flex;
+      justify-content: space-between;
+
+      gap: 10px;
+
+      margin-top: 4px;
+    }
+
+    .cr-password-meta small {
+      color: #68718c;
+
+      font-size: 8px;
+    }
+
+
+    /* =====================================================
+       SELECT
+    ===================================================== */
+
+    .cr-select-wrap {
+      position: relative;
+    }
+
+    .cr-select-wrap::after {
+      content: "";
+
+      width: 6px;
+      height: 6px;
+
+      position: absolute;
+
+      top: 17px;
+      right: 16px;
+
+      border-right: 2px solid #78819d;
+      border-bottom: 2px solid #78819d;
+
+      transform: rotate(45deg);
+
+      pointer-events: none;
+    }
+
+    .cr-select-wrap select {
+      width: 100%;
+      height: 44px;
+
+      padding: 0 40px 0 13px;
+
+      appearance: none;
+      -webkit-appearance: none;
+
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 11px;
+      outline: none;
+
+      color: #e7e9f6;
+
+      background: #090d1b;
+
+      font: inherit;
+      font-size: 10px;
+
+      cursor: pointer;
+    }
+
+    .cr-select-wrap select:focus {
+      border-color: rgba(40, 215, 255, 0.48);
+
+      box-shadow:
+        0 0 0 3px rgba(40, 215, 255, 0.04);
+    }
+
+
+    /* =====================================================
+       TEXTAREA
+    ===================================================== */
+
+    .cr-field textarea {
+      width: 100%;
+      min-height: 72px;
+
+      padding: 11px 13px;
+
+      resize: vertical;
+
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 11px;
+      outline: none;
+
+      color: #f5f6ff;
+
+      background: rgba(4, 7, 17, 0.6);
+
+      font: inherit;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    .cr-field textarea:focus {
+      border-color: rgba(40, 215, 255, 0.48);
+
+      box-shadow:
+        0 0 0 3px rgba(40, 215, 255, 0.04);
+    }
+
+
+    /* =====================================================
+       FIELD HINTS
+    ===================================================== */
+
+    .cr-field__hint {
+      display: block;
+
+      margin-top: 4px;
+
+      color: #68718c;
+
+      font-size: 8px;
+    }
+
+    .cr-field__meta {
+      display: flex;
+      justify-content: space-between;
+
+      margin-top: 4px;
+
+      color: #68718c;
+
+      font-size: 8px;
+    }
+
+    .cr-field__error {
+      display: block;
+
+      min-height: 10px;
+
+      margin-top: 3px;
+
+      color: var(--cr-danger);
+
+      font-size: 8px;
+    }
+
+    .cr-field--error .cr-input-wrap,
+    .cr-field--error textarea,
+    .cr-field--error .cr-select-wrap select {
+      border-color: rgba(255, 102, 128, 0.6);
+    }
+
+    .cr-field--valid .cr-input-wrap {
+      border-color: rgba(61, 227, 160, 0.42);
+    }
+
+
+    /* =====================================================
+       REVIEW
+    ===================================================== */
+
+    .cr-review {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+      gap: 15px;
+    }
+
+    .cr-review__section {
+      overflow: hidden;
+
+      border: 1px solid var(--cr-border);
+      border-radius: 14px;
+
+      background: rgba(4, 7, 17, 0.42);
+    }
+
+    .cr-review__section-head {
+      min-height: 47px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 9px 13px;
+
+      border-bottom: 1px solid var(--cr-border-soft);
+
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .cr-review__section-head > div {
+      display: flex;
+      align-items: center;
+
+      gap: 8px;
+    }
+
+    .cr-review__section-head span {
+      width: 25px;
+      height: 25px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 7px;
+
+      color: var(--cr-cyan);
+
+      background: rgba(40, 215, 255, 0.07);
+
+      font-size: 8px;
+      font-weight: 800;
+    }
+
+    .cr-review__section-head strong {
+      color: #f2f4ff;
+
+      font-size: 10px;
+    }
+
+    .cr-review-edit {
+      padding: 5px 9px;
+
+      border: 1px solid rgba(134, 88, 255, 0.25);
+      border-radius: 7px;
+
+      color: #b7a8ff;
+
+      background: rgba(134, 88, 255, 0.08);
+
+      font: inherit;
+      font-size: 8px;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .cr-review-edit:hover {
+      color: #ffffff;
+
+      border-color: rgba(40, 215, 255, 0.35);
+    }
+
+    .cr-review__grid {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+    }
+
+    .cr-review__item {
+      min-width: 0;
+
+      padding: 12px 13px;
+
+      border-right: 1px solid var(--cr-border-soft);
+      border-bottom: 1px solid var(--cr-border-soft);
+    }
+
+    .cr-review__item:nth-child(even) {
+      border-right: 0;
+    }
+
+    .cr-review__item small {
+      display: block;
+
+      margin-bottom: 4px;
+
+      color: #69728e;
+
+      font-size: 7px;
+
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .cr-review__item strong {
+      display: block;
+
+      overflow: hidden;
+
+      color: #dfe2f2;
+
+      font-size: 9px;
+      font-weight: 600;
+
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+
+    /* =====================================================
+       CHECKBOX
+    ===================================================== */
+
+    .cr-checkbox {
+      display: flex !important;
+      align-items: flex-start !important;
+      justify-content: flex-start !important;
+
+      gap: 9px;
+
+      margin-top: 15px !important;
+
+      color: #8992ad !important;
+
+      font-size: 9px !important;
+      font-weight: 400 !important;
+      line-height: 1.5;
+
+      cursor: pointer;
+    }
+
+    .cr-checkbox input {
+      position: absolute;
+
+      opacity: 0;
+
+      pointer-events: none;
+    }
+
+    .cr-checkbox__box {
+      width: 17px;
+      height: 17px;
+
+      display: grid;
+      place-items: center;
+
+      flex: 0 0 17px;
+
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 5px;
+
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .cr-checkbox__box svg {
+      width: 11px;
+      height: 11px;
+
+      fill: none;
+
+      stroke: #ffffff;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+
+      opacity: 0;
+
+      transform: scale(0.5);
+
+      transition: 0.2s ease;
+    }
+
+    .cr-checkbox input:checked + .cr-checkbox__box {
+      border-color: transparent;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--cr-purple),
+          var(--cr-cyan)
+        );
+    }
+
+    .cr-checkbox input:checked + .cr-checkbox__box svg {
+      opacity: 1;
+
+      transform: scale(1);
+    }
+
+    .cr-checkbox a {
+      color: #aa9cff;
+
+      text-decoration: none;
+    }
+
+    .cr-checkbox a:hover {
+      color: var(--cr-cyan);
+    }
+
+
+    /* =====================================================
+       ACTIONS
+    ===================================================== */
+
+    .cr-step-form__actions {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr);
+
+      align-items: center;
+
+      gap: 13px;
+
+      padding-top: 15px;
+      margin-top: 2px;
+
+      border-top: 1px solid var(--cr-border-soft);
+    }
+
+    .cr-btn {
+      min-height: 40px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 7px;
+
+      padding: 0 17px;
+
+      border-radius: 10px;
+
+      font: inherit;
+      font-size: 9px;
+      font-weight: 750;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .cr-btn--back {
+      justify-self: start;
+
+      border: 1px solid rgba(255, 255, 255, 0.09);
+
+      color: #bec4d8;
+
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .cr-btn--back:hover:not(:disabled) {
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .cr-btn:disabled {
+      opacity: 0.32;
+
+      cursor: not-allowed;
+    }
+
+    .cr-btn--next,
+    .cr-btn--submit {
+      min-width: 128px;
+
+      justify-self: end;
+
+      border: 0;
+
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          100deg,
+          #8658ff,
+          #665cff 55%,
+          #26cfee
+        );
+
+      box-shadow:
+        0 9px 22px rgba(108, 82, 255, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .cr-btn--next:hover,
+    .cr-btn--submit:hover {
+      transform: translateY(-1px);
+
+      box-shadow:
+        0 12px 28px rgba(108, 82, 255, 0.28);
+    }
+
+    .cr-step-form__counter {
+      color: #68718d;
+
+      font-size: 8px;
+
+      text-align: center;
+    }
+
+    .cr-step-form__counter strong {
+      color: #c9cddd;
+    }
+
+
+    /* =====================================================
+       SUCCESS
+    ===================================================== */
+
+    .cr-success {
+      padding: 35px 20px 22px;
+
+      text-align: center;
+
+      animation: crStepEnter 0.35s ease;
+    }
+
+    .cr-success__icon {
+      width: 62px;
+      height: 62px;
+
+      display: grid;
+      place-items: center;
+
+      margin: 0 auto 17px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--cr-purple),
+          var(--cr-cyan)
+        );
+
+      box-shadow:
+        0 0 0 7px rgba(134, 88, 255, 0.07),
+        0 0 32px rgba(40, 215, 255, 0.15);
+    }
+
+    .cr-success__icon svg {
+      width: 27px;
+      height: 27px;
+
+      fill: none;
+
+      stroke: #ffffff;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .cr-success__eyebrow {
+      color: var(--cr-green);
+
+      font-size: 8px;
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+    }
+
+    .cr-success h3 {
+      margin: 7px 0;
+
+      color: #ffffff;
+
+      font-size: 23px;
+    }
+
+    .cr-success p {
+      max-width: 380px;
+
+      margin: 0 auto 20px;
+
+      color: var(--cr-muted);
+
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .cr-btn--restart {
+      min-width: 125px;
+
+      border: 1px solid rgba(40, 215, 255, 0.25);
+
+      color: #ffffff;
+
+      background: rgba(40, 215, 255, 0.07);
+    }
+
+
+    /* =====================================================
+       HIDDEN ELEMENTS
+    ===================================================== */
+
+    .cr-step-form [hidden] {
+      display: none !important;
+    }
+
+
+    /* =====================================================
+       TABLET
+    ===================================================== */
+
+    @media (max-width: 850px) {
+
+      .cr-step-form {
+        padding: 18px 12px;
+      }
+
+      .cr-step-form__card {
+        padding: 24px 20px;
+      }
+
+      .cr-step__text small {
+        display: none;
+      }
+
+      .cr-step__line {
+        margin: 0 11px;
+      }
+
+      .cr-review {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 650px) {
+
+      .cr-step-form {
+        padding: 12px 8px;
+      }
+
+      .cr-step-form__card {
+        padding: 21px 14px;
+
+        border-radius: 18px;
+      }
+
+      .cr-step-form__header {
+        margin-bottom: 18px;
+      }
+
+      .cr-step-form__header h2 {
+        font-size: 25px;
+      }
+
+      .cr-step-form__progress {
+        padding: 11px;
+
+        margin-bottom: 19px;
+      }
+
+      .cr-step__text {
+        display: none;
+      }
+
+      .cr-step__circle {
+        width: 32px;
+        height: 32px;
+
+        flex-basis: 32px;
+      }
+
+      .cr-step__line {
+        min-width: 18px;
+
+        margin: 0 7px;
+      }
+
+      .cr-form-step[data-step="1"].cr-form-step--active,
+      .cr-form-step[data-step="2"].cr-form-step--active {
+        display: block;
+      }
+
+      .cr-form-step[data-step="2"] .cr-field-row {
+        display: block;
+      }
+
+      .cr-review {
+        grid-template-columns: 1fr;
+      }
+
+      .cr-review__grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cr-review__item {
+        border-right: 0;
+      }
+
+      .cr-step-form__actions {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cr-step-form__counter {
+        grid-column: 1 / -1;
+        grid-row: 1;
+      }
+
+      .cr-btn--back {
+        grid-column: 1;
+        grid-row: 2;
+
+        width: 100%;
+      }
+
+      .cr-btn--next,
+      .cr-btn--submit {
+        grid-column: 2;
+        grid-row: 2;
+
+        width: 100%;
+        min-width: 0;
+      }
+    }
+
+
+    /* =====================================================
+       SMALL MOBILE
+    ===================================================== */
+
+    @media (max-width: 400px) {
+
+      .cr-step-form__card {
+        padding: 19px 11px;
+      }
+
+      .cr-form-step__heading {
+        align-items: flex-start;
+      }
+
+      .cr-form-step__number {
+        width: 37px;
+        height: 37px;
+
+        flex-basis: 37px;
+      }
+
+      .cr-input-wrap,
+      .cr-select-wrap select {
+        height: 43px;
+      }
+
+      .cr-password-meta {
+        flex-direction: column;
+
+        gap: 2px;
+      }
+    }

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi Step Registration Form | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cr-step-form" id="crStepForm">
+
+      <div class="cr-step-form__card">
+
+        <!-- Header -->
+        <div class="cr-step-form__header">
+          <span class="cr-step-form__eyebrow">CREATE YOUR ACCOUNT</span>
+          <h2>Join CodeRipple</h2>
+          <p>Complete the steps below to set up your profile.</p>
+        </div>
+
+        <!-- Progress -->
+        <div class="cr-step-form__progress">
+
+          <div class="cr-step cr-step--active" data-step-indicator="1">
+            <div class="cr-step__circle">
+              <span>1</span>
+            </div>
+            <div class="cr-step__text">
+              <strong>Account</strong>
+              <small>Login details</small>
+            </div>
+          </div>
+
+          <div class="cr-step__line">
+            <span></span>
+          </div>
+
+          <div class="cr-step" data-step-indicator="2">
+            <div class="cr-step__circle">
+              <span>2</span>
+            </div>
+            <div class="cr-step__text">
+              <strong>Profile</strong>
+              <small>About you</small>
+            </div>
+          </div>
+
+          <div class="cr-step__line">
+            <span></span>
+          </div>
+
+          <div class="cr-step" data-step-indicator="3">
+            <div class="cr-step__circle">
+              <span>3</span>
+            </div>
+            <div class="cr-step__text">
+              <strong>Review</strong>
+              <small>Confirm details</small>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Form -->
+        <form class="cr-step-form__form" novalidate>
+
+          <!-- STEP 1 -->
+          <section class="cr-form-step cr-form-step--active" data-step="1">
+
+            <div class="cr-form-step__heading">
+              <span class="cr-form-step__number">01</span>
+
+              <div>
+                <h3>Account Details</h3>
+                <p>Choose the credentials you'll use to sign in.</p>
+              </div>
+            </div>
+
+            <div class="cr-field">
+              <label for="crEmail">Email Address</label>
+
+              <div class="cr-input-wrap">
+                <span class="cr-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 6h16v12H4z"></path>
+                    <path d="m4 7 8 6 8-6"></path>
+                  </svg>
+                </span>
+
+                <input
+                  type="email"
+                  id="crEmail"
+                  name="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                >
+              </div>
+
+              <span class="cr-field__error"></span>
+            </div>
+
+            <div class="cr-field">
+              <label for="crPassword">Password</label>
+
+              <div class="cr-input-wrap">
+                <span class="cr-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="5" y="10" width="14" height="10" rx="2"></rect>
+                    <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                  </svg>
+                </span>
+
+                <input
+                  type="password"
+                  id="crPassword"
+                  name="password"
+                  placeholder="Create a password"
+                  autocomplete="new-password"
+                  minlength="8"
+                  required
+                >
+
+                <button
+                  class="cr-password-toggle"
+                  type="button"
+                  aria-label="Show password"
+                >
+                  <svg class="cr-eye-icon" viewBox="0 0 24 24">
+                    <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6z"></path>
+                    <circle cx="12" cy="12" r="2.5"></circle>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="cr-password-strength">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="cr-password-meta">
+                <small class="cr-password-hint">Minimum 8 characters</small>
+                <small class="cr-password-status">Password strength</small>
+              </div>
+
+              <span class="cr-field__error"></span>
+            </div>
+
+            <div class="cr-field">
+              <label for="crConfirmPassword">Confirm Password</label>
+
+              <div class="cr-input-wrap">
+                <span class="cr-input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <rect x="5" y="10" width="14" height="10" rx="2"></rect>
+                    <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                  </svg>
+                </span>
+
+                <input
+                  type="password"
+                  id="crConfirmPassword"
+                  name="confirmPassword"
+                  placeholder="Repeat your password"
+                  autocomplete="new-password"
+                  required
+                >
+              </div>
+
+              <span class="cr-field__error"></span>
+            </div>
+
+          </section>
+
+          <!-- STEP 2 -->
+          <section class="cr-form-step" data-step="2">
+
+            <div class="cr-form-step__heading">
+              <span class="cr-form-step__number">02</span>
+
+              <div>
+                <h3>Your Profile</h3>
+                <p>Tell us a little more about yourself.</p>
+              </div>
+            </div>
+
+            <div class="cr-field-row">
+
+              <div class="cr-field">
+                <label for="crFirstName">First Name</label>
+
+                <div class="cr-input-wrap">
+                  <span class="cr-input-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="8" r="4"></circle>
+                      <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"></path>
+                    </svg>
+                  </span>
+
+                  <input
+                    type="text"
+                    id="crFirstName"
+                    name="firstName"
+                    placeholder="First name"
+                    autocomplete="given-name"
+                    required
+                  >
+                </div>
+
+                <span class="cr-field__error"></span>
+              </div>
+
+              <div class="cr-field">
+                <label for="crLastName">Last Name</label>
+
+                <div class="cr-input-wrap">
+                  <span class="cr-input-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                      <circle cx="12" cy="8" r="4"></circle>
+                      <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"></path>
+                    </svg>
+                  </span>
+
+                  <input
+                    type="text"
+                    id="crLastName"
+                    name="lastName"
+                    placeholder="Last name"
+                    autocomplete="family-name"
+                    required
+                  >
+                </div>
+
+                <span class="cr-field__error"></span>
+              </div>
+
+            </div>
+
+            <div class="cr-field">
+              <label for="crUsername">Username</label>
+
+              <div class="cr-input-wrap">
+                <span class="cr-input-icon" aria-hidden="true">@</span>
+
+                <input
+                  type="text"
+                  id="crUsername"
+                  name="username"
+                  placeholder="Choose a username"
+                  autocomplete="username"
+                  minlength="3"
+                  required
+                >
+              </div>
+
+              <span class="cr-field__hint">
+                Letters, numbers and underscores only.
+              </span>
+
+              <span class="cr-field__error"></span>
+            </div>
+
+            <div class="cr-field">
+              <label for="crRole">What best describes you?</label>
+
+              <div class="cr-select-wrap">
+                <select id="crRole" name="role" required>
+                  <option value="">Select your role</option>
+                  <option value="developer">Developer</option>
+                  <option value="designer">Designer</option>
+                  <option value="student">Student</option>
+                  <option value="freelancer">Freelancer</option>
+                  <option value="creator">Content Creator</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <span class="cr-field__error"></span>
+            </div>
+
+            <div class="cr-field">
+              <label for="crBio">
+                Short Bio
+                <span class="cr-label-optional">Optional</span>
+              </label>
+
+              <textarea
+                id="crBio"
+                name="bio"
+                maxlength="160"
+                placeholder="Tell us something about yourself..."
+              ></textarea>
+
+              <div class="cr-field__meta">
+                <span>You can change this later.</span>
+                <span><strong id="crBioCount">0</strong>/160</span>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- STEP 3 -->
+          <section class="cr-form-step" data-step="3">
+
+            <div class="cr-form-step__heading">
+              <span class="cr-form-step__number">03</span>
+
+              <div>
+                <h3>Review & Submit</h3>
+                <p>Check your information before creating your account.</p>
+              </div>
+            </div>
+
+            <div class="cr-review">
+
+              <div class="cr-review__section">
+                <div class="cr-review__section-head">
+                  <div>
+                    <span>01</span>
+                    <strong>Account</strong>
+                  </div>
+
+                  <button type="button" class="cr-review-edit" data-edit-step="1">
+                    Edit
+                  </button>
+                </div>
+
+                <div class="cr-review__grid">
+                  <div class="cr-review__item">
+                    <small>Email Address</small>
+                    <strong data-review="email">Not provided</strong>
+                  </div>
+
+                  <div class="cr-review__item">
+                    <small>Password</small>
+                    <strong data-review="password">••••••••</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cr-review__section">
+                <div class="cr-review__section-head">
+                  <div>
+                    <span>02</span>
+                    <strong>Profile</strong>
+                  </div>
+
+                  <button type="button" class="cr-review-edit" data-edit-step="2">
+                    Edit
+                  </button>
+                </div>
+
+                <div class="cr-review__grid">
+                  <div class="cr-review__item">
+                    <small>Full Name</small>
+                    <strong data-review="name">Not provided</strong>
+                  </div>
+
+                  <div class="cr-review__item">
+                    <small>Username</small>
+                    <strong data-review="username">Not provided</strong>
+                  </div>
+
+                  <div class="cr-review__item">
+                    <small>Role</small>
+                    <strong data-review="role">Not provided</strong>
+                  </div>
+
+                  <div class="cr-review__item">
+                    <small>Bio</small>
+                    <strong data-review="bio">Not provided</strong>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <label class="cr-checkbox">
+              <input type="checkbox" id="crTerms" name="terms" required>
+
+              <span class="cr-checkbox__box">
+                <svg viewBox="0 0 24 24">
+                  <path d="m5 12 4 4L19 7"></path>
+                </svg>
+              </span>
+
+              <span>
+                I agree to the
+                <a href="#" onclick="return false;">Terms of Service</a>
+                and
+                <a href="#" onclick="return false;">Privacy Policy</a>.
+              </span>
+            </label>
+
+            <span class="cr-field__error cr-terms-error"></span>
+
+          </section>
+
+          <!-- Navigation -->
+          <div class="cr-step-form__actions">
+
+            <button
+              type="button"
+              class="cr-btn cr-btn--back"
+              id="crBackBtn"
+              disabled
+            >
+              <span aria-hidden="true">←</span>
+              Back
+            </button>
+
+            <div class="cr-step-form__counter">
+              Step <strong id="crCurrentStep">1</strong> of 3
+            </div>
+
+            <button
+              type="button"
+              class="cr-btn cr-btn--next"
+              id="crNextBtn"
+            >
+              Next Step
+              <span aria-hidden="true">→</span>
+            </button>
+
+            <button
+              type="submit"
+              class="cr-btn cr-btn--submit"
+              id="crSubmitBtn"
+              hidden
+            >
+              Create Account
+              <span aria-hidden="true">✓</span>
+            </button>
+
+          </div>
+
+        </form>
+
+        <!-- Success State -->
+        <div class="cr-success" hidden>
+          <div class="cr-success__icon">
+            <svg viewBox="0 0 24 24">
+              <path d="m5 12 4 4L19 7"></path>
+            </svg>
+          </div>
+
+          <span class="cr-success__eyebrow">ALL DONE</span>
+
+          <h3>Account Created!</h3>
+
+          <p>
+            Your demo registration has been completed successfully.
+          </p>
+
+          <button type="button" class="cr-btn cr-btn--restart">
+            Start Again
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
