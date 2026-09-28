@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crosshair Cursor Effect | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cr-crosshair" id="crCrosshair">
+
+  <div class="cr-crosshair__panel">
+
+    <div class="cr-crosshair__content">
+
+      <span class="cr-crosshair__eyebrow">
+        INTERACTIVE CURSOR
+      </span>
+
+      <h2>Crosshair Cursor Effect</h2>
+
+      <p>
+        Move your cursor around the preview area and hover over
+        the interactive targets.
+      </p>
+
+
+      <div class="cr-crosshair__targets">
+
+        <button
+          class="cr-crosshair__target"
+          type="button">
+
+          <span class="cr-crosshair__target-icon">
+            01
+          </span>
+
+          <span class="cr-crosshair__target-text">
+            <strong>Explore</strong>
+            <small>Hover target</small>
+          </span>
+
+        </button>
+
+
+        <button
+          class="cr-crosshair__target"
+          type="button">
+
+          <span class="cr-crosshair__target-icon">
+            02
+          </span>
+
+          <span class="cr-crosshair__target-text">
+            <strong>Discover</strong>
+            <small>Hover target</small>
+          </span>
+
+        </button>
+
+
+        <button
+          class="cr-crosshair__target"
+          type="button">
+
+          <span class="cr-crosshair__target-icon">
+            03
+          </span>
+
+          <span class="cr-crosshair__target-text">
+            <strong>Launch</strong>
+            <small>Hover target</small>
+          </span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="cr-crosshair__hint">
+
+      <span class="cr-crosshair__hint-dot"></span>
+
+      Move cursor inside this area
+
+    </div>
+
+
+    <div
+      class="cr-crosshair__cursor"
+      aria-hidden="true">
+
+      <span
+        class="cr-crosshair__line cr-crosshair__line--top">
+      </span>
+
+      <span
+        class="cr-crosshair__line cr-crosshair__line--right">
+      </span>
+
+      <span
+        class="cr-crosshair__line cr-crosshair__line--bottom">
+      </span>
+
+      <span
+        class="cr-crosshair__line cr-crosshair__line--left">
+      </span>
+
+
+      <span class="cr-crosshair__ring">
+        <span class="cr-crosshair__dot"></span>
+      </span>
+
+
+      <span
+        class="cr-crosshair__coordinate cr-crosshair__coordinate--x">
+        X 000
+      </span>
+
+      <span
+        class="cr-crosshair__coordinate cr-crosshair__coordinate--y">
+        Y 000
+      </span>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
