@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Tilt Profile Card | CodeRipple</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cr-tilt-profile" id="crTiltProfile">
+
+  <div class="cr-tilt-profile__stage">
+
+    <article class="cr-tilt-profile__card">
+
+      <!-- CURSOR FOLLOW GLOW -->
+      <div
+        class="cr-tilt-profile__glow"
+        aria-hidden="true"
+      ></div>
+
+      <!-- GLARE EFFECT -->
+      <div
+        class="cr-tilt-profile__glare"
+        aria-hidden="true"
+      ></div>
+
+
+      <!-- DECORATIVE BACKGROUND -->
+      <div
+        class="cr-tilt-profile__decor"
+        aria-hidden="true"
+      >
+
+        <span
+          class="cr-tilt-profile__orb cr-tilt-profile__orb--one"
+        ></span>
+
+        <span
+          class="cr-tilt-profile__orb cr-tilt-profile__orb--two"
+        ></span>
+
+        <span
+          class="cr-tilt-profile__grid"
+        ></span>
+
+      </div>
+
+
+      <!-- PROFILE CONTENT -->
+      <div class="cr-tilt-profile__content">
+
+
+        <!-- TOP STATUS -->
+        <div
+          class="cr-tilt-profile__top"
+          data-depth="18"
+        >
+
+          <span class="cr-tilt-profile__status">
+
+            <span
+              class="cr-tilt-profile__status-dot"
+            ></span>
+
+            Available for work
+
+          </span>
+
+          <span class="cr-tilt-profile__badge">
+            PRO
+          </span>
+
+        </div>
+
+
+        <!-- AVATAR -->
+        <div
+          class="cr-tilt-profile__avatar-wrap"
+          data-depth="34"
+        >
+
+          <div class="cr-tilt-profile__avatar">
+            <span>AR</span>
+          </div>
+
+          <span
+            class="cr-tilt-profile__avatar-ring"
+          ></span>
+
+        </div>
+
+
+        <!-- PROFILE INFO -->
+        <div
+          class="cr-tilt-profile__info"
+          data-depth="26"
+        >
+
+          <span class="cr-tilt-profile__eyebrow">
+            FRONTEND DEVELOPER
+          </span>
+
+          <h2>Alex Rivera</h2>
+
+          <p>
+            Building clean interfaces, smooth interactions
+            and memorable digital experiences.
+          </p>
+
+        </div>
+
+
+        <!-- SKILLS -->
+        <div
+          class="cr-tilt-profile__skills"
+          data-depth="22"
+        >
+
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+
+        </div>
+
+
+        <!-- STATS -->
+        <div
+          class="cr-tilt-profile__stats"
+          data-depth="20"
+        >
+
+          <div class="cr-tilt-profile__stat">
+            <strong>42</strong>
+            <span>Projects</span>
+          </div>
+
+          <div
+            class="cr-tilt-profile__divider"
+          ></div>
+
+          <div class="cr-tilt-profile__stat">
+            <strong>18K</strong>
+            <span>Followers</span>
+          </div>
+
+          <div
+            class="cr-tilt-profile__divider"
+          ></div>
+
+          <div class="cr-tilt-profile__stat">
+            <strong>4.9</strong>
+            <span>Rating</span>
+          </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+        <div
+          class="cr-tilt-profile__actions"
+          data-depth="30"
+        >
+
+          <button
+            class="cr-tilt-profile__button cr-tilt-profile__button--primary"
+            type="button"
+          >
+
+            <span>View Profile</span>
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                d="M5 12h14M13 6l6 6-6 6"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+
+            </svg>
+
+          </button>
+
+
+          <button
+            class="cr-tilt-profile__button cr-tilt-profile__button--icon"
+            type="button"
+            aria-label="Send message"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+
+              <path
+                d="M21 3L9.5 14.5M21 3l-7 18-4.5-6.5L3 10l18-7z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+
+            </svg>
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- BOTTOM ACCENT -->
+      <div
+        class="cr-tilt-profile__accent"
+        aria-hidden="true"
+      ></div>
+
+    </article>
+
+
+    <!-- INTERACTION HINT -->
+    <div class="cr-tilt-profile__hint">
+
+      <span class="cr-tilt-profile__hint-icon">
+        ↗
+      </span>
+
+      Move your cursor over the card
+
+    </div>
+
+  </div>
+
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
