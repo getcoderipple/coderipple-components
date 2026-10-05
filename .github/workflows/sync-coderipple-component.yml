@@ -64,9 +64,6 @@ jobs:
           if not css_code:
               raise SystemExit("Missing CSS")
 
-          if not js_code:
-              raise SystemExit("Missing JavaScript")
-
           category_map = {
               "CSS Button Effects": "buttons",
               "Buttons": "buttons",
@@ -103,6 +100,12 @@ jobs:
           folder = os.path.join(category, slug)
           os.makedirs(folder, exist_ok=True)
 
+          script_tag = (
+              '<script src="script.js"></script>'
+              if js_code
+              else ''
+          )
+
           index_html = f"""<!DOCTYPE html>
           <html lang="en">
           <head>
@@ -115,7 +118,7 @@ jobs:
 
           {html_code}
 
-            <script src="script.js"></script>
+            {script_tag}
           </body>
           </html>
           """
@@ -134,22 +137,52 @@ jobs:
           ) as f:
               f.write(css_code + "\n")
 
-          with open(
-              os.path.join(folder, "script.js"),
-              "w",
-              encoding="utf-8"
-          ) as f:
-              f.write(js_code + "\n")
+          script_path = os.path.join(folder, "script.js")
+
+          if js_code:
+              with open(
+                  script_path,
+                  "w",
+                  encoding="utf-8"
+              ) as f:
+                  f.write(js_code + "\n")
+
+          elif os.path.exists(script_path):
+              os.remove(script_path)
+
+          if js_code:
+              technology_text = """- HTML5
+          - CSS3
+          - JavaScript"""
+
+              files_text = """- `index.html`
+          - `style.css`
+          - `script.js`"""
+
+              component_description = (
+                  "A ready-to-use CodeRipple web component "
+                  "built with HTML, CSS, and JavaScript."
+              )
+
+          else:
+              technology_text = """- HTML5
+          - CSS3"""
+
+              files_text = """- `index.html`
+          - `style.css`"""
+
+              component_description = (
+                  "A ready-to-use CodeRipple web component "
+                  "built with HTML and CSS."
+              )
 
           readme = f"""# {title}
 
-          A ready-to-use CodeRipple web component built with HTML, CSS, and JavaScript.
+          {component_description}
 
           ## Technologies Used
 
-          - HTML5
-          - CSS3
-          - JavaScript
+          {technology_text}
 
           ## Live Tutorial
 
@@ -159,9 +192,7 @@ jobs:
 
           ## Files
 
-          - `index.html`
-          - `style.css`
-          - `script.js`
+          {files_text}
 
           ## More Components
 
@@ -184,6 +215,10 @@ jobs:
           print("Component:", title)
           print("Category:", category)
           print("Folder:", folder)
+          print(
+              "JavaScript:",
+              "Included" if js_code else "Not required"
+          )
           print("Files generated successfully.")
           PY
 
